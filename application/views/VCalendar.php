@@ -10,16 +10,16 @@
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="MengList" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="<?= site_url()?>/assets/media/logos/favicon.ico" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Page Vendor Stylesheets(used by this page)-->
-		<link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?= site_url()?>/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?= site_url()?>/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?= site_url()?>/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -36,7 +36,7 @@
 					<div class="aside-logo flex-column-auto px-9 mb-9" id="kt_aside_logo">
 						<!--begin::Logo-->
 						<a href="VTask.html">
-							<img alt="Logo" src="assets/media/logos/logo.png" class="h-30px logo" />
+							<img alt="Logo" src="<?= site_url()?>/assets/media/logos/logo.png" class="h-30px logo" />
 						</a>
 						<!--end::Logo-->
 					</div>
@@ -48,9 +48,9 @@
 							<!--begin::Menu-->
 							<div class="menu menu-column menu-rounded fw-bold my-auto" id="#kt_aside_menu" data-kt-menu="true">
 								<div class="menu-item">
-									<a class="menu-link" href="<?php echo site_url('Welcome/Task'); ?>">
+									<a class="menu-link" href="<?php echo site_url('task'); ?>">
 										<span class="menu-icon">
-											<img alt="Logo" src="assets/media/icons/task.svg" class="h-20px logo" />
+											<img alt="Logo" src="<?= site_url()?>/assets/media/icons/task.svg" class="h-20px logo" />
 										</span>
 										<span class="menu-title">Task</span>
 									</a>
@@ -60,16 +60,16 @@
 									
 									<span class="menu-link">
 										<span class="menu-icon">
-											<img alt="Logo" src="assets/media/icons/folder.svg" class="h-20px logo" />
+											<img alt="Logo" src="<?= site_url()?>/assets/media/icons/folder.svg" class="h-20px logo" />
 										</span>
 										<span class="menu-title">Folder</span>
 										<span class="menu-arrow"></span>
 									</span>
 									<div class="menu-sub menu-sub-accordion">	
 										<div class="menu-item">
-											<a class="menu-link" href="<?php echo site_url('Welcome/Folder'); ?>">
+											<a class="menu-link" href="<?php echo site_url('folder'); ?>">
 												<span class="menu-icon">
-													<img alt="Logo" src="assets/media/icons/folder-list.png" class="h-20px logo" />
+													<img alt="Logo" src="<?= site_url()?>/assets/media/icons/folder-list.png" class="h-20px logo" />
 												</span>
 												<span class="menu-title">Folder 1</span>
 											</a>
@@ -81,16 +81,16 @@
 									
 									<span class="menu-link">
 										<span class="menu-icon">
-											<img alt="Logo" src="assets/media/icons/tags.png" class="h-20px logo" />
+											<img alt="Logo" src="<?= site_url()?>/assets/media/icons/tags.png" class="h-20px logo" />
 										</span>
 										<span class="menu-title">Tags</span>
 										<span class="menu-arrow"></span>
 									</span>
 									<div class="menu-sub menu-sub-accordion">	
 										<div class="menu-item">
-											<a class="menu-link" href="<?php echo site_url('Welcome/Tags'); ?>">
+											<a class="menu-link" href="<?php echo site_url('tags'); ?>">
 												<span class="menu-icon">
-													<img alt="Logo" src="assets/media/icons/tag.png" class="h-20px logo" />
+													<img alt="Logo" src="<?= site_url()?>/assets/media/icons/tag.png" class="h-20px logo" />
 												</span>
 												<span class="menu-title">Tags 1</span>
 											</a>
@@ -99,18 +99,18 @@
 								</div>
 
                                 <div class="menu-item">
-									<a class="menu-link active" href="<?php echo site_url('Welcome/Calendar'); ?>">
+									<a class="menu-link active" href="<?php echo site_url('calendar'); ?>">
 										<span class="menu-icon">
-											<img alt="Logo" src="assets/media/icons/calendar-10.png" class="h-20px logo" />
+											<img alt="Logo" src="<?= site_url()?>/assets/media/icons/calendar-10.png" class="h-20px logo" />
 										</span>
 										<span class="menu-title">Calendar</span>
 									</a>
 								</div>
 
                                 <div class="menu-item">
-									<a class="menu-link" href="<?php echo site_url('Welcome/Statistic'); ?>">
+									<a class="menu-link" href="<?php echo site_url('statistic'); ?>">
 										<span class="menu-icon">
-											<img alt="Logo" src="assets/media/icons/statistics.png" class="h-20px logo" />
+											<img alt="Logo" src="<?= site_url()?>/assets/media/icons/statistics.png" class="h-20px logo" />
 											</span>
 											<!--end::Svg Icon-->
 										</span>
@@ -132,7 +132,7 @@
 							<div class="d-flex align-items-center">
 								<!--begin::Avatar-->
 								<div class="symbol symbol-circle symbol-40px">
-									<img src="assets/media/avatars/150-26.jpg" alt="photo" />
+									<img src="<?= site_url()?>/assets/media/avatars/150-26.jpg" alt="photo" />
 								</div>
 								<!--end::Avatar-->
 								<!--begin::User info-->
@@ -166,7 +166,7 @@
 										<div class="menu-content d-flex align-items-center px-3">
 											<!--begin::Avatar-->
 											<div class="symbol symbol-50px me-5">
-												<img alt="Logo" src="assets/media/avatars/150-26.jpg" />
+												<img alt="Logo" src="<?= site_url()?>/assets/media/avatars/150-26.jpg" />
 											</div>
 											<!--end::Avatar-->
 											<!--begin::Username-->
@@ -207,7 +207,7 @@
 									<!--end::Menu item-->
 									<!--begin::Menu item-->
 									<div class="menu-item px-5">
-										<a href="../../demo3/dist/authentication/flows/basic/sign-in.html" class="menu-link px-5">Sign Out</a>
+										<a href="<?= site_url('sign-out')?>" class="menu-link px-5">Sign Out</a>
 									</div>
 									<!--end::Menu item-->
 								</div>
@@ -249,7 +249,7 @@
 								<!--end::Aside mobile toggle-->
 								<!--begin::Logo-->
 								<a href="../../demo3/dist/index.html" class="d-flex align-items-center">
-									<img alt="Logo" src="assets/media/logos/logo.png" class="h-20px" />
+									<img alt="Logo" src="<?= site_url()?>/assets/media/logos/logo.png" class="h-20px" />
 								</a>
 								<!--end::Logo-->
 							</div>
@@ -310,7 +310,7 @@
 													<a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
-															<img src="assets/media/avatars/150-1.jpg" alt="" />
+															<img src="<?= site_url()?>/assets/media/avatars/150-1.jpg" alt="" />
 														</div>
 														<!--end::Symbol-->
 														<!--begin::Title-->
@@ -325,7 +325,7 @@
 													<a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
-															<img src="assets/media/avatars/150-3.jpg" alt="" />
+															<img src="<?= site_url()?>/assets/media/avatars/150-3.jpg" alt="" />
 														</div>
 														<!--end::Symbol-->
 														<!--begin::Title-->
@@ -340,7 +340,7 @@
 													<a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
-															<img src="assets/media/avatars/150-8.jpg" alt="" />
+															<img src="<?= site_url()?>/assets/media/avatars/150-8.jpg" alt="" />
 														</div>
 														<!--end::Symbol-->
 														<!--begin::Title-->
@@ -355,7 +355,7 @@
 													<a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
-															<img src="assets/media/avatars/150-11.jpg" alt="" />
+															<img src="<?= site_url()?>/assets/media/avatars/150-11.jpg" alt="" />
 														</div>
 														<!--end::Symbol-->
 														<!--begin::Title-->
@@ -370,7 +370,7 @@
 													<a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
-															<img src="assets/media/avatars/150-12.jpg" alt="" />
+															<img src="<?= site_url()?>/assets/media/avatars/150-12.jpg" alt="" />
 														</div>
 														<!--end::Symbol-->
 														<!--begin::Title-->
@@ -389,7 +389,7 @@
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
 															<span class="symbol-label bg-light">
-																<img class="w-20px h-20px" src="assets/media/svg/brand-logos/volicity-9.svg" alt="" />
+																<img class="w-20px h-20px" src="<?= site_url()?>/assets/media/svg/brand-logos/volicity-9.svg" alt="" />
 															</span>
 														</div>
 														<!--end::Symbol-->
@@ -406,7 +406,7 @@
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
 															<span class="symbol-label bg-light">
-																<img class="w-20px h-20px" src="assets/media/svg/brand-logos/tvit.svg" alt="" />
+																<img class="w-20px h-20px" src="<?= site_url()?>/assets/media/svg/brand-logos/tvit.svg" alt="" />
 															</span>
 														</div>
 														<!--end::Symbol-->
@@ -423,7 +423,7 @@
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
 															<span class="symbol-label bg-light">
-																<img class="w-20px h-20px" src="assets/media/svg/misc/infography.svg" alt="" />
+																<img class="w-20px h-20px" src="<?= site_url()?>/assets/media/svg/misc/infography.svg" alt="" />
 															</span>
 														</div>
 														<!--end::Symbol-->
@@ -440,7 +440,7 @@
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
 															<span class="symbol-label bg-light">
-																<img class="w-20px h-20px" src="assets/media/svg/brand-logos/leaf.svg" alt="" />
+																<img class="w-20px h-20px" src="<?= site_url()?>/assets/media/svg/brand-logos/leaf.svg" alt="" />
 															</span>
 														</div>
 														<!--end::Symbol-->
@@ -457,7 +457,7 @@
 														<!--begin::Symbol-->
 														<div class="symbol symbol-40px me-4">
 															<span class="symbol-label bg-light">
-																<img class="w-20px h-20px" src="assets/media/svg/brand-logos/tower.svg" alt="" />
+																<img class="w-20px h-20px" src="<?= site_url()?>/assets/media/svg/brand-logos/tower.svg" alt="" />
 															</span>
 														</div>
 														<!--end::Symbol-->
@@ -974,21 +974,21 @@
 		<!--end::Root-->
 
 		<!--end::Main-->
-		<script>var hostUrl = "assets/";</script>
+		<script>var hostUrl = "<?= site_url()?>/assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="assets/plugins/global/plugins.bundle.js"></script>
-		<script src="assets/js/scripts.bundle.js"></script>
+		<script src="<?= site_url()?>/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="<?= site_url()?>/assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+		<script src="<?= site_url()?>/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="assets/js/custom/apps/calendar/calendar.js"></script>
-		<script src="assets/js/custom/widgets.js"></script>
-		<script src="assets/js/custom/apps/chat/chat.js"></script>
-		<script src="assets/js/custom/modals/create-app.js"></script>
-		<script src="assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/apps/calendar/calendar.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/widgets.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/apps/chat/chat.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/modals/create-app.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/modals/upgrade-plan.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

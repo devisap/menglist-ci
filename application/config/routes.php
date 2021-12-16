@@ -52,3 +52,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// Auth
+$route['sign-in']   = 'AuthController/vSignIn';
+$route['sign-up']   = 'AuthController/vSignUp';
+$route['sign-out']  = 'AuthController/vSignOut';
+$route['register']  = 'AuthController/register';
+
+$route['task']      = 'TaskController';
+$route['folder']    = 'FolderController';
+$route['tags']      = 'TagsController';
+$route['calendar']  = 'CalendarController';
+$route['statistic'] = 'StatisticController';
