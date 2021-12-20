@@ -20,7 +20,7 @@ class AuthController extends CI_Controller{
         $user = $this->User->getById($param['EMAIL_USER']);
         if($user != null){
             if($user->PASSWORD_USER == hash('sha256', md5($param['PASSWORD_USER']))){
-                $this->setSession($param['EMAIL_USER'], $param['PASSWORD_USER']);
+                $this->setSession($param['EMAIL_USER'], $user->NAMA_USER);
                 redirect('task');
             }else{
                 $this->session->set_flashdata('err_msg', 'User nad password not match!');
