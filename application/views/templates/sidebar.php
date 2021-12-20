@@ -36,10 +36,12 @@
                     <div class="menu-sub menu-sub-accordion">	
                         <div class="menu-item">
                             <a class="menu-link" href="<?php echo site_url('folder'); ?>">
-                                <span class="menu-icon">
-                                    <img alt="Logo" src="<?= base_url()?>assets/media/icons/folder-list.png" class="h-20px logo" />
-                                </span>
+                                <i class="bi bi-archive-fill"></i> &nbsp;
                                 <span class="menu-title">Folder 1</span>
+                            </a>
+                            <a class="menu-link" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">
+                                <i class="bi bi-plus"></i> &nbsp;
+                                <span class="menu-title">Add new folder</span>
                             </a>
                         </div>
                     </div>

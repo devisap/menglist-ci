@@ -6,6 +6,7 @@ class TaskController extends CI_Controller{
         if(empty($this->session->userdata('is_logged'))){
             redirect('sign-in');
         }
+        $this->load->model('Task');
     }
     public function index(){
         $this->load->view('templates/header');
@@ -14,6 +15,6 @@ class TaskController extends CI_Controller{
         $this->load->view('templates/footer');
     }
     public function store(){
-        print_r($_POST);       
+        print_r($_POST);      
     }
 }
