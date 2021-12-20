@@ -60,7 +60,11 @@ $route['login']     = 'AuthController/login';
 $route['register']  = 'AuthController/register';
 $route['logout']    = 'AuthController/logout';
 
-$route['task']      = 'TaskController';
+//  TASK
+$route['task']          = 'TaskController';
+$route['task/store']    = 'TaskController/store';
+
+
 $route['folder']    = 'FolderController';
 $route['tags']      = 'TagsController';
 $route['calendar']  = 'CalendarController';
