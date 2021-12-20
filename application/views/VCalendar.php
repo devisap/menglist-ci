@@ -207,7 +207,7 @@
 									<!--end::Menu item-->
 									<!--begin::Menu item-->
 									<div class="menu-item px-5">
-										<a href="<?= site_url('sign-out')?>" class="menu-link px-5">Sign Out</a>
+										<a href="<?= site_url('logout')?>" class="menu-link px-5">Sign Out</a>
 									</div>
 									<!--end::Menu item-->
 								</div>

@@ -60,7 +60,7 @@
 						<!--begin::Wrapper-->
 						<div class="w-lg-500px p-10 p-lg-15 mx-auto">
 							<!--begin::Form-->
-							<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="#">
+							<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= site_url('login')?>" method="post">
 								<!--begin::Heading-->
 								<div class="text-center mb-10">
 									<!--begin::Title-->
@@ -78,7 +78,7 @@
 									<label class="form-label fs-6 fw-bolder text-dark">Email</label>
 									<!--end::Label-->
 									<!--begin::Input-->
-									<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" />
+									<input class="form-control form-control-lg form-control-solid" type="text" name="EMAIL_USER" autocomplete="off" />
 									<!--end::Input-->
 								</div>
 								<!--end::Input group-->
@@ -95,14 +95,14 @@
 									</div>
 									<!--end::Wrapper-->
 									<!--begin::Input-->
-									<input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" />
+									<input class="form-control form-control-lg form-control-solid" type="password" name="PASSWORD_USER" autocomplete="off" />
 									<!--end::Input-->
 								</div>
 								<!--end::Input group-->
 								<!--begin::Actions-->
 								<div class="text-center">
 									<!--begin::Submit button-->
-									<button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
+									<button type="submit" id="" class="btn btn-lg btn-primary w-100 mb-5">
 										<span class="indicator-label">Submit</span>
 										<span class="indicator-progress">Please wait...
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

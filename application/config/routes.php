@@ -56,8 +56,9 @@ $route['translate_uri_dashes'] = FALSE;
 // Auth
 $route['sign-in']   = 'AuthController/vSignIn';
 $route['sign-up']   = 'AuthController/vSignUp';
-$route['sign-out']  = 'AuthController/vSignOut';
+$route['login']     = 'AuthController/login';
 $route['register']  = 'AuthController/register';
+$route['logout']    = 'AuthController/logout';
 
 $route['task']      = 'TaskController';
 $route['folder']    = 'FolderController';

@@ -93,7 +93,7 @@
 										<!--end::Label-->
 										<!--begin::Input wrapper-->
 										<div class="position-relative mb-3">
-											<input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="password" autocomplete="off" />
+											<input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="PASSWORD_USER" autocomplete="off" />
 											<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 												<i class="bi bi-eye-slash fs-2"></i>
 												<i class="bi bi-eye fs-2 d-none"></i>
@@ -118,7 +118,7 @@
 								<!--begin::Input group-->
 								<div class="fv-row mb-5">
 									<label class="form-label fw-bolder text-dark fs-6">Confirm Password</label>
-									<input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="confirm-password" autocomplete="off" />
+									<input class="form-control form-control-lg form-control-solid" type="password" placeholder="" autocomplete="off" />
 								</div>
 								<!--end::Input group-->
 								<!--begin::Input group-->
@@ -132,7 +132,7 @@
 								<!--end::Input group-->
 								<!--begin::Actions-->
 								<div class="text-center">
-									<button type="button" id="kt_sign_up_submit" class="btn btn-lg btn-primary">
+									<button type="submit" id="" class="btn btn-lg btn-primary">
 										<span class="indicator-label">Submit</span>
 										<span class="indicator-progress">Please wait...
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
