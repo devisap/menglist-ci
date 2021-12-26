@@ -21,11 +21,18 @@ class Task extends CI_Model{
     }
     public function insert($param){
         $this->db->insert('task', $param);
+        return $this->db->insert_id();
     }
     public function update($param){
         $this->db->where('ID_TASK', $param['ID_TASK'])->update('task', $param);
     }
     public function delete($param){
         $this->db->delete('task', $param);
+    }
+    public function insertTag($param){
+        $this->db->insert('task_tag', $param);
+    }
+    public function insertReminder($param){
+        $this->db->insert('task_reminder', $param);
     }
 }
