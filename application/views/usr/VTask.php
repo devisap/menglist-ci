@@ -71,22 +71,23 @@
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Today</span>
 													</span>
-													<div class="menu-sub menu-sub-accordion">
-														<div class="menu-item">
-															<label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" checked="checked" />
-																<span class="px-4 form-check-label fw-bold">Folder 1</span>
-															</label>
-														</div>
-													</div>
-													<div class="menu-sub menu-sub-accordion">
-														<div class="menu-item">
-															<label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today2" />
-																<span class="px-4 form-check-label fw-bold">Folder 2</span>
-															</label>
-														</div>
-													</div>
+													<?php
+														foreach ($todays as $item) {
+															echo '
+															<div class="menu-sub menu-sub-accordion">
+																<div class="menu-item">
+																	<div class="menu-link">
+																		<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
+																			<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
+																		</label>
+																		<span class="fw-bold">'.$item->NAMA_TASK.'</span>
+																	</div>
+																</div>
+															</div>		
+															';
+														}
+													?>
+													
 												</div>
 
 												<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -94,28 +95,44 @@
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Tomorrow</span>
 													</span>
-													<div class="menu-sub menu-sub-accordion">
-														<div class="menu-item">
-															<label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="" />
-																<span class="px-4 form-check-label fw-bold">Tomorrow 1</span>
-															</label>
-														</div>
-													</div>
+													<?php
+														foreach ($tomorrows as $item) {
+															echo '
+															<div class="menu-sub menu-sub-accordion">
+																<div class="menu-item">
+																	<div class="menu-link">
+																		<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
+																			<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
+																		</label>
+																		<span class="fw-bold">'.$item->NAMA_TASK.'</span>
+																	</div>
+																</div>
+															</div>		
+															';
+														}
+													?>
 												</div>
 												<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 													<span class="menu-link">
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Next 7 Days</span>
 													</span>
-													<div class="menu-sub menu-sub-accordion">
-														<div class="menu-item">
-															<label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="" />
-																<span class="px-4 form-check-label fw-bold">Next 7 Days</span>
-															</label>
-														</div>
-													</div>
+													<?php
+														foreach ($nxtWeeks as $item) {
+															echo '
+															<div class="menu-sub menu-sub-accordion">
+																<div class="menu-item">
+																	<div class="menu-link">
+																		<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
+																			<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
+																		</label>
+																		<span class="fw-bold">'.$item->NAMA_TASK.'</span>
+																	</div>
+																</div>
+															</div>		
+															';
+														}
+													?>
 												</div>
 
 												<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -124,12 +141,22 @@
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Undated</span>
 													</span>
 													<div class="menu-sub menu-sub-accordion">
-														<div class="menu-item">
-															<label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="" />
-																<span class="px-4 form-check-label fw-bold">Undated</span>
-															</label>
-														</div>
+														<?php
+															foreach ($undates as $item) {
+																echo '
+																<div class="menu-sub menu-sub-accordion">
+																	<div class="menu-item">
+																		<div class="menu-link">
+																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
+																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
+																			</label>
+																			<span class="fw-bold">'.$item->NAMA_TASK.'</span>
+																		</div>
+																	</div>
+																</div>		
+																';
+															}
+														?>
 													</div>
 												</div>
 
@@ -138,22 +165,22 @@
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Completed</span>
 													</span>
-													<div class="menu-sub menu-sub-accordion">
-														<div class="menu-item">
-															<label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" checked="checked" />
-																<span class="px-4 form-check-label fw-bold">AP 1</span>
-															</label>
-														</div>
-													</div>
-													<div class="menu-sub menu-sub-accordion">
-														<div class="menu-item">
-															<label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today2" checked="checked" />
-																<span class="px-4 form-check-label fw-bold">AP 3</span>
-															</label>
-														</div>
-													</div>
+														<?php
+															foreach ($completeds as $item) {
+																echo '
+																<div class="menu-sub menu-sub-accordion">
+																	<div class="menu-item">
+																		<div class="menu-link">
+																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
+																				<input class="form-check-input h-20px w-20px bg-secondary" type="checkbox" name="" value="today1" checked />
+																			</label>
+																			<span class="fw-bold text-secondary" style="text-decoration: line-through;font-style: italic;">'.$item->NAMA_TASK.'</span>
+																		</div>
+																	</div>
+																</div>		
+																';
+															}
+														?>
 												</div>
 
 											</div>

@@ -17,7 +17,7 @@ class FolderController extends CI_Controller{
     }
     public function store(){
         $this->Folder->insert($_POST);
-        redirect('folder');
+        redirect('folder/123');
     }
     
 }
