@@ -16,11 +16,9 @@ class TaskController extends CI_Controller{
         $email          = $this->session->userdata('email');
         $currDate       = date('Y-m-d');
         $tomDate        = date('Y-m-d', strtotime("+1 day", strtotime($currDate)));
-        $startWeekDate  = date('Y-m-d', strtotime("+2 day", strtotime($currDate)));
-        $endWeekDate    = date('Y-m-d', strtotime("+8 day", strtotime($currDate)));
-        $data['todays']     = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK)" => $currDate]);
-        $data['tomorrows']  = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK)" => $tomDate]);
-        $data['nxtWeeks']   = $this->Task->getNextWeek(['EMAIL_USER' => $email, "start" => $startWeekDate, "end" => $endWeekDate]);
+        $data['todays']     = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK) <" => $tomDate, 'orderBy' => "TGL_TASK ASC"]);
+        $data['tomorrows']  = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK)" => $tomDate, 'orderBy' => "TGL_TASK ASC"]);
+        $data['nxtWeeks']   = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK) >" => $tomDate, 'orderBy' => "TGL_TASK ASC"]);
         $data['undates']    = $this->Task->getUndate(['EMAIL_USER' => $email]);
         $data['completeds'] = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "1", "orderBy" => "TGL_TASK DESC"]);
 

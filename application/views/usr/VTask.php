@@ -73,17 +73,35 @@
 													</span>
 													<?php
 														foreach ($todays as $item) {
+															$status = "";
+															if($item->PRIORITAS_TASK != "0"){
+																$status = '
+																	<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
+																';
+															}
+
+															$date = "";
+															if($item->TGL_TASK != null){
+																$date='
+																	<span class="text-secondary">'.date_format(date_create($item->TGL_TASK), 'H:i').'</span>
+																';
+															}
 															echo '
-															<div class="menu-sub menu-sub-accordion">
-																<div class="menu-item">
-																	<div class="menu-link">
-																		<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
-																			<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
-																		</label>
-																		<span class="fw-bold">'.$item->NAMA_TASK.'</span>
+																<div class="menu-sub menu-sub-accordion">
+																	<div class="menu-item">
+																		<div class="menu-link">
+																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10" >
+																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
+																				'.$status.'
+																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
+																			</label>
+																			<div style="right: 5px;">
+																				'.$date.'
+																			</div>
+																			
+																		</div>
 																	</div>
-																</div>
-															</div>		
+																</div>		
 															';
 														}
 													?>
@@ -97,17 +115,32 @@
 													</span>
 													<?php
 														foreach ($tomorrows as $item) {
+															$status = "";
+															if($item->PRIORITAS_TASK){
+																$status = '
+																	<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
+																';
+															}
+
+															$date = "";
+															if($item->TGL_TASK != null){
+																$date='
+																	<span class="text-secondary">'.date_format(date_create($item->TGL_TASK), 'H:i').'</span>
+																';
+															}
 															echo '
-															<div class="menu-sub menu-sub-accordion">
-																<div class="menu-item">
-																	<div class="menu-link">
-																		<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
-																			<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
-																		</label>
-																		<span class="fw-bold">'.$item->NAMA_TASK.'</span>
+																<div class="menu-sub menu-sub-accordion">
+																	<div class="menu-item">
+																		<div class="menu-link">
+																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10" >
+																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
+																				'.$status.'
+																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
+																			</label>
+																			'.$date.'
+																		</div>
 																	</div>
-																</div>
-															</div>		
+																</div>		
 															';
 														}
 													?>
@@ -119,17 +152,32 @@
 													</span>
 													<?php
 														foreach ($nxtWeeks as $item) {
+															$status = "";
+															if($item->PRIORITAS_TASK){
+																$status = '
+																	<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
+																';
+															}
+
+															$date = "";
+															if($item->TGL_TASK != null){
+																$date='
+																	<span class="text-secondary">'.date_format(date_create($item->TGL_TASK), 'j M Y H:i').'</span>
+																';
+															}
 															echo '
-															<div class="menu-sub menu-sub-accordion">
-																<div class="menu-item">
-																	<div class="menu-link">
-																		<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
-																			<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
-																		</label>
-																		<span class="fw-bold">'.$item->NAMA_TASK.'</span>
+																<div class="menu-sub menu-sub-accordion">
+																	<div class="menu-item">
+																		<div class="menu-link">
+																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10" >
+																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
+																				'.$status.'
+																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
+																			</label>
+																			'.$date.'
+																		</div>
 																	</div>
-																</div>
-															</div>		
+																</div>		
 															';
 														}
 													?>
@@ -143,14 +191,21 @@
 													<div class="menu-sub menu-sub-accordion">
 														<?php
 															foreach ($undates as $item) {
+																$status = "";
+																if($item->PRIORITAS_TASK){
+																	$status = '
+																		<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
+																	';
+																}
 																echo '
 																<div class="menu-sub menu-sub-accordion">
 																	<div class="menu-item">
 																		<div class="menu-link">
 																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
 																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
+																				'.$status.'
+																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
 																			</label>
-																			<span class="fw-bold">'.$item->NAMA_TASK.'</span>
 																		</div>
 																	</div>
 																</div>		
@@ -167,14 +222,21 @@
 													</span>
 														<?php
 															foreach ($completeds as $item) {
+																$status = "";
+																if($item->PRIORITAS_TASK){
+																	$status = '
+																		<span class="ps-4" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
+																	';
+																}
 																echo '
 																<div class="menu-sub menu-sub-accordion">
 																	<div class="menu-item">
 																		<div class="menu-link">
 																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
 																				<input class="form-check-input h-20px w-20px bg-secondary" type="checkbox" name="" value="today1" checked />
+																				'.$status.'
+																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
 																			</label>
-																			<span class="fw-bold text-secondary" style="text-decoration: line-through;font-style: italic;">'.$item->NAMA_TASK.'</span>
 																		</div>
 																	</div>
 																</div>		
