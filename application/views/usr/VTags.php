@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--begin::Head-->
+	<head><base href="../">
+        <title>MengList</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="MengList" />
+		<link rel="shortcut icon" href="<?= site_url()?>/assets/media/logos/favicon.ico" />
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<!--end::Fonts-->
+		<!--begin::Page Vendor Stylesheets(used by this page)-->
+		<link href="<?= site_url()?>/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Page Vendor Stylesheets-->
+		<!--begin::Global Stylesheets Bundle(used by all pages)-->
+		<link href="<?= site_url()?>/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?= site_url()?>/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Global Stylesheets Bundle-->
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
 	<body id="kt_body" class="sidebar-enabled">
 		<!--begin::Main-->
 		<!--begin::Root-->
@@ -13,7 +39,7 @@
 							<!--begin::Page title-->
 							<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
 								<!--begin::Heading-->
-								<h1 class="d-flex flex-column text-dark fw-bolder my-0 fs-1">Folder
+								<h1 class="d-flex flex-column text-dark fw-bolder my-0 fs-1">Tags
 								<!-- <small class="text-muted fs-6 fw-bold ms-1 pt-1">You’ve got 24 New Sales</small></h1> -->
 								<!--end::Heading-->
 							</div>
@@ -42,7 +68,8 @@
 							<!--begin::Topbar-->
 							<div class="d-flex align-items-center flex-shrink-0">
 								<!--begin::Action-->
-									<a href="#" class="btn btn-primary er fs-6 px-8 py-4" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">Add Folder</a>
+									<a href="#" class="btn btn-primary er fs-6 px-6 py-2" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">Edit</a>&nbsp;
+									<a href="#" class="btn btn-danger er fs-6 px-6 py-2" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">Delete</a>
 									<!--end::Action-->
 						</div>
 						<!--end::Topbar-->
@@ -130,7 +157,7 @@
 									<div class="modal-content rounded">
 										<!--begin::Modal header-->
 										<div class="modal-header pb-0 border-0 justify-content-between">
-                                            <h5 class="modal-title text-left fs-1">Add Folder <i class="bi bi-archive-fill fs-2x"></i></h5> 
+                                            <h5 class="modal-title text-left fs-1">Add Tags</h5>
 											<!--begin::Close-->
 											<div class="btn btn-sm btn-icon btn-active-color-primary " data-bs-dismiss="modal">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
@@ -157,41 +184,33 @@
 													<!--begin::Label-->
 													<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 														<span class="required">Name</span>
-														<!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i> -->
+														<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i>
 													</label>
 													<!--end::Label-->
-													<input type="text" class="form-control form-control-solid" placeholder="Enter Title" name="" required />
+													<input type="text" class="form-control form-control-solid" placeholder="Enter Title" name="" />
 												</div>
 												<!--end::Input group-->
+
 												<!--begin::Input group-->
-												<div class="d-flex flex-column mb-8 fv-row">
-													<!--begin::Label-->
-													<label class="d-flex align-items-center fs-6 fw-bold mb-2">
-														<span class="">Choose color</span> 
-														<!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i> -->
-													</label>
-													<!--end::Label-->
-													<div class="row">
-														<div class="col">
-															<div style="border-radius: 100px;width: 35px;height: 35px;background: #1abc9c;"></div>
-														</div>
-														<div class="col">
-															<div style="border-radius: 100px;width: 35px;height: 35px;background: #2ecc71;"></div>
-														</div>
-														<div class="col">
-															<div style="border-radius: 100px;width: 35px;height: 35px;background: #3498db;"></div>
-														</div>
-														<div class="col">
-															<div style="border-radius: 100px;width: 35px;height: 35px;background: #9b59b6;"></div>
-														</div>
-														<div class="col">
-															<div style="border-radius: 100px;width: 35px;height: 35px;background: #9b59b6;"></div>
-														</div>
+												<div class="row g-9 mb-8">
+													<!--begin::Col-->
+													<div class="col-md-6 fv-row">
+														<label class="required fs-6 fw-bold mb-2">Priority</label>
+														<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Priority" name="">
+															<option value="">Select Priority...</option>
+															<option value="1">Low</option>
+															<option value="2">Medium</option>
+															<option value="3">High</option>
+															<option value="4">Important</option>
+															<option value="5">Urgent</option>
+														</select>
 													</div>
+													<!--end::Col-->
 												</div>
 												<!--end::Input group-->
+                                              
 												<!--begin::Actions-->
-												<div class="text-center mt-8">
+												<div class="text-center">
 													<button type="reset" id="kt_modal_new_target_cancel" class="btn btn-light me-3">Cancel</button>
 													<button type="submit" id="kt_modal_new_target_submit" class="btn btn-primary">
 														<span class="indicator-label">Submit</span>
@@ -231,4 +250,22 @@
 			</span>
 			<!--end::Svg Icon-->
 		</div>
-	
+		<!--end::Scrolltop-->
+		<!--end::Main-->
+		<script>var hostUrl = "<?= site_url()?>/assets/";</script>
+		<!--begin::Javascript-->
+		<!--begin::Global Javascript Bundle(used by all pages)-->
+		<script src="<?= site_url()?>/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="<?= site_url()?>/assets/js/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="<?= site_url()?>/assets/js/custom/modals/new-target.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/widgets.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/apps/chat/chat.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/modals/create-app.js"></script>
+		<script src="<?= site_url()?>/assets/js/custom/modals/upgrade-plan.js"></script>
+		<!--end::Page Custom Javascript-->
+		<!--end::Javascript-->
+	</body>
+	<!--end::Body-->
+</html>
