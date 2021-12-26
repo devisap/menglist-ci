@@ -2,10 +2,10 @@
 
 class Task extends CI_Model{
     public function getAll(){
-        return $this->db->get('task')->result();
+        return $this->db->get('v_task')->result();
     }
     public function getById($id){
-        return $this->db->get_where('task', ['ID_TASK' => $id])->row();
+        return $this->db->get_where('v_task', ['ID_TASK' => $id])->row();
     }
     public function get($param){
         if(!empty($param['orderBy'])){ // order by
@@ -17,16 +17,16 @@ class Task extends CI_Model{
             unset($param['limit']);
         }
 
-        return $this->db->get_where('task', $param)->result();
+        return $this->db->get_where('v_task', $param)->result();
     }
     public function getNextWeek($param){
         return $this->db->query("
-            SELECT * FROM task t WHERE EMAIL_USER = '".$param['EMAIL_USER']."' AND ISFINISHED_TASK = '0' AND TGL_TASK BETWEEN '".$param['start']."' AND '".$param['end']."'
+            SELECT * FROM v_task WHERE EMAIL_USER = '".$param['EMAIL_USER']."' AND ISFINISHED_TASK = '0' AND TGL_TASK > '".$param['start']."' ORDER BY TGL_TASK ASC
         ")->result();
     }
     public function getUndate($param){
         return $this->db->query("
-            SELECT * FROM task t WHERE EMAIL_USER = '".$param['EMAIL_USER']."' AND TGL_TASK IS NULL
+            SELECT * FROM v_task WHERE EMAIL_USER = '".$param['EMAIL_USER']."' AND TGL_TASK IS NULL
         ")->result();
     }
     public function insert($param){
