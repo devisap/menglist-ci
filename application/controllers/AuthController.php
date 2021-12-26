@@ -22,12 +22,10 @@ class AuthController extends CI_Controller{
             if($user->PASSWORD_USER == hash('sha256', md5($param['PASSWORD_USER']))){
                 $this->setSession($param['EMAIL_USER'], $user->NAMA_USER);
                 redirect('task');
-            }else{
-                $this->session->set_flashdata('err_msg', 'User nad password not match!');
             }
-        }else{
-            $this->session->set_flashdata('err_msg', 'User not found!');
         }
+        
+        $this->session->set_flashdata('err_msg', 'User and password incorrect!');
         redirect('sign-in');
     }
     public function register(){

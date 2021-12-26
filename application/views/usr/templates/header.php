@@ -2,7 +2,7 @@
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="../">
-        <title>MengList</title>
+        <title>MengList | <?= $title?></title>
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />

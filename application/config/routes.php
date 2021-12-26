@@ -60,12 +60,20 @@ $route['login']     = 'AuthController/login';
 $route['register']  = 'AuthController/register';
 $route['logout']    = 'AuthController/logout';
 
-//  TASK
-$route['task']          = 'TaskController';
-$route['task/store']    = 'TaskController/store';
+
+// ======= USER =======
+// TASK
+$route['task']          = 'usr/TaskController';
+$route['task/store']    = 'usr/TaskController/store';
+
+// FOLDER
+$route['folder/store']  = 'usr/FolderController/store';
+$route['folder/(:any)'] = 'usr/FolderController/vFolder/$1';
+
+// TAG
+$route['tags/store']  = 'usr/TagController/store';
+$route['tags/(:any)'] = 'usr/TagController/vTag/$1';
 
 
-$route['folder']    = 'FolderController';
-$route['tags']      = 'TagsController';
-$route['calendar']  = 'CalendarController';
-$route['statistic'] = 'StatisticController';
+$route['calendar']  = 'usr/CalendarController';
+$route['statistic'] = 'usr/StatisticController';
