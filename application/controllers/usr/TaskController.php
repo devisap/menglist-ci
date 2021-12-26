@@ -13,6 +13,17 @@ class TaskController extends CI_Controller{
         $data['folders']    = $this->General->get('folder', ['EMAIL_USER' => $this->session->userdata('email')]);
         $data['tags']       = $this->General->get('tag', ['EMAIL_USER' => $this->session->userdata('email')]);
 
+        $email          = $this->session->userdata('email');
+        $currDate       = date('Y-m-d');
+        $tomDate        = date('Y-m-d', strtotime("+1 day", strtotime($currDate)));
+        $startWeekDate  = date('Y-m-d', strtotime("+2 day", strtotime($currDate)));
+        $endWeekDate    = date('Y-m-d', strtotime("+8 day", strtotime($currDate)));
+        $data['todays']     = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK)" => $currDate]);
+        $data['tomorrows']  = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK)" => $tomDate]);
+        $data['nxtWeeks']   = $this->Task->getNextWeek(['EMAIL_USER' => $email, "start" => $startWeekDate, "end" => $endWeekDate]);
+        $data['undates']    = $this->Task->getUndate(['EMAIL_USER' => $email]);
+        $data['completeds'] = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "1", "orderBy" => "TGL_TASK DESC"]);
+
         $this->template->user('usr/VTask', $data);
     }
     public function store(){
@@ -23,7 +34,7 @@ class TaskController extends CI_Controller{
         unset($_POST['PENGINGAT_TASK']);
 
         $dataStore = $_POST;
-        $dataStore['TGL_TASK'] = date_format(date_create($dataStore['TGL_TASK']), 'Y-m-d H:i:s');
+        $dataStore['TGL_TASK'] = $_POST['TGL_TASK'] != null ? date_format(date_create($dataStore['TGL_TASK']), 'Y-m-d H:i:s') : null;
         $idTask = $this->Task->insert($dataStore);
 
         if($tags != null){
