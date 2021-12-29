@@ -1,6 +1,6 @@
 <?php
     $folders = $this->General->get('folder', ['EMAIL_USER' => $this->session->userdata('email')]);
-    $tags    = $this->General->get('tag', ['EMAIL_USER' => $this->session->userdata('email')]);
+    $tags    = $this->General->get('v_tag', ['EMAIL_USER' => $this->session->userdata('email')]);
 ?>
 <!--begin::Aside-->
 <div id="kt_aside" class="aside py-9" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
@@ -72,8 +72,7 @@
                                 foreach ($tags as $item) {
                                     echo '
                                         <a class="menu-link" href="'.site_url('tags/'.$item->ID_TAG).'">
-                                            <i class="bi bi-tag-fill"></i> &nbsp;
-                                            <span class="menu-title">'.$item->NAMA_TAG.'</span>
+                                            <span class="menu-title"><i class="bi bi-tag-fill"></i>&nbsp;'.$item->NAMA_TAG.'</span>
                                         </a>
                                     ';
                                 }

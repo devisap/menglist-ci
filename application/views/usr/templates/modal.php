@@ -278,28 +278,22 @@
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="">Choose color</span> 
-                            <!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i> -->
-                        </label>
                         <!--end::Label-->
-                        <div class="row">
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #1abc9c;"></div>
-                            </div>
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #2ecc71;"></div>
-                            </div>
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #3498db;"></div>
-                            </div>
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #9b59b6;"></div>
-                            </div>
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #9b59b6;"></div>
-                            </div>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-bold mb-2">Choose a color</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Priority" name="WARNA_TAG">
+                                <option value="1">Default</option>
+                                <option value="2">Blue</option>
+                                <option value="3">Gray</option>
+                                <option value="4">Green</option>
+                                <option value="5">Magenta</option>
+                                <option value="6">Yellow</option>
+                                <option value="7">Red</option>
+                                <option value="8">Dark</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            
                         </div>
                     </div>
                     <!--end::Input group-->
