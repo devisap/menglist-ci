@@ -55,7 +55,7 @@ class Welcome extends CI_Controller {
 
 	public function Statistic()
 	{
-		$this->load->view('VStatistic');
+		$this->load->view('usr/VStatistic');
 	}
 
 }

@@ -72,7 +72,7 @@
                                 foreach ($tags as $item) {
                                     echo '
                                         <a class="menu-link" href="'.site_url('tags/'.$item->ID_TAG).'">
-                                            <span class="menu-title"><i class="bi bi-tag-fill"></i>&nbsp;'.$item->NAMA_TAG.'</span>
+                                            <span class="menu-title"><span class="badge '.$item->BADGE_MC.'"><i class="bi bi-tag-fill text-'.$item->COLOR_MC.'"></i>&nbsp;'.$item->NAMA_TAG.'</span></span>
                                         </a>
                                     ';
                                 }

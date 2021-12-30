@@ -284,7 +284,7 @@
                             <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Priority" name="WARNA_TAG">
                                 <option value="1">Default</option>
                                 <option value="2">Blue</option>
-                                <option value="3">Gray</option>
+                                <!-- <option value="3">Gray</option> -->
                                 <option value="4">Green</option>
                                 <option value="5">Magenta</option>
                                 <option value="6">Yellow</option>

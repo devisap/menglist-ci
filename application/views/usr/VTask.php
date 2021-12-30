@@ -94,6 +94,13 @@
 																		';
 																	}
 																}
+
+																$taskTag 	 = $this->General->get('v_task_tag', ['ID_TASK' => $item->ID_TASK]);
+																$taskTagHtml = "";
+																foreach ($taskTag as $item2) {
+																	$taskTagHtml .= '<span class="badge '.$item2->BADGE_MC.'"><i class="bi bi-tag-fill text-'.$item2->COLOR_MC.'"></i> '.$item2->NAMA_TAG.'</span>&nbsp;';
+																}
+
 																echo '
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
@@ -105,6 +112,7 @@
 																					<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
 																				</label>
 																				<div style="right: 5px;">
+																					'.$taskTagHtml.'
 																					'.$date.'
 																				</div>
 																			</div>
@@ -155,6 +163,13 @@
 																		<span class="text-secondary">'.date_format(date_create($item->TGL_TASK), 'H:i').'</span>
 																	';
 																}
+
+																$taskTag 	 = $this->General->get('v_task_tag', ['ID_TASK' => $item->ID_TASK]);
+																$taskTagHtml = "";
+																foreach ($taskTag as $item2) {
+																	$taskTagHtml .= '<span class="badge '.$item2->BADGE_MC.'"><i class="bi bi-tag-fill text-'.$item2->COLOR_MC.'"></i> '.$item2->NAMA_TAG.'</span>&nbsp;';
+																}
+
 																echo '
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
@@ -165,6 +180,7 @@
 																					'.$status.'
 																					<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
 																				</label>
+																				'.$taskTagHtml.'
 																				'.$date.'
 																			</div>
 																		</div>
@@ -213,6 +229,13 @@
 																		<span class="text-secondary">'.date_format(date_create($item->TGL_TASK), 'j M Y H:i').'</span>
 																	';
 																}
+
+																$taskTag 	 = $this->General->get('v_task_tag', ['ID_TASK' => $item->ID_TASK]);
+																$taskTagHtml = "";
+																foreach ($taskTag as $item2) {
+																	$taskTagHtml .= '<span class="badge '.$item2->BADGE_MC.'"><i class="bi bi-tag-fill text-'.$item2->COLOR_MC.'"></i> '.$item2->NAMA_TAG.'</span>&nbsp;';
+																}
+
 																echo '
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
@@ -223,6 +246,7 @@
 																					'.$status.'
 																					<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
 																				</label>
+																				'.$taskTagHtml.'
 																				'.$date.'
 																			</div>
 																		</div>
@@ -266,6 +290,13 @@
 																			<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
 																		';
 																	}
+
+																	$taskTag 	 = $this->General->get('v_task_tag', ['ID_TASK' => $item->ID_TASK]);
+																	$taskTagHtml = "";
+																	foreach ($taskTag as $item2) {
+																		$taskTagHtml .= '<span class="badge '.$item2->BADGE_MC.'"><i class="bi bi-tag-fill text-'.$item2->COLOR_MC.'"></i> '.$item2->NAMA_TAG.'</span>&nbsp;';
+																	}
+
 																	echo '
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
@@ -276,6 +307,7 @@
 																					'.$status.'
 																					<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
 																				</label>
+																				'.$taskTagHtml.'
 																			</div>
 																		</div>
 																	</div>		
@@ -318,6 +350,13 @@
 																			<span class="ps-4" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
 																		';
 																	}
+																	
+																	$taskTag 	 = $this->General->get('v_task_tag', ['ID_TASK' => $item->ID_TASK]);
+																	$taskTagHtml = "";
+																	foreach ($taskTag as $item2) {
+																		$taskTagHtml .= '<span class="badge badge-light"><i class="bi bi-tag-fill text-secondary"></i> '.$item2->NAMA_TAG.'</span>&nbsp;';
+																	}
+
 																	echo '
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
@@ -328,6 +367,7 @@
 																					'.$status.'
 																					<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
 																				</label>
+																				'.$taskTagHtml.'
 																			</div>
 																		</div>
 																	</div>		
