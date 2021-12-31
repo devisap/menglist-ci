@@ -65,6 +65,8 @@ $route['logout']    = 'AuthController/logout';
 // TASK
 $route['task']          = 'usr/TaskController';
 $route['task/store']    = 'usr/TaskController/store';
+$route['task/edit']     = 'usr/TaskController/edit';
+$route['task/ajxGet']   = 'usr/TaskController/ajxGet';
 
 // FOLDER
 $route['folder/store']  = 'usr/FolderController/store';

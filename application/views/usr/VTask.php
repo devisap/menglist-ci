@@ -105,7 +105,7 @@
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
 																			<div class="menu-link">
-																				<a><i class="bi bi-three-dots-vertical"></i></a>
+																				<a class="mdlEdit" data-id="'.$item->ID_TASK.'" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
 																				<label class="ps-lg-3 form-check form-check-custom form-check-solid me-10" >
 																					<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
 																					'.$status.'
@@ -174,7 +174,7 @@
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
 																			<div class="menu-link">
-																				<a><i class="bi bi-three-dots-vertical"></i></a>
+																				<a class="mdlEdit" data-id="'.$item->ID_TASK.'" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
 																				<label class="ps-lg-3 form-check form-check-custom form-check-solid me-10" >
 																					<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
 																					'.$status.'
@@ -240,7 +240,7 @@
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
 																			<div class="menu-link">
-																				<a><i class="bi bi-three-dots-vertical"></i></a>
+																				<a class="mdlEdit" data-id="'.$item->ID_TASK.'" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
 																				<label class="ps-lg-3 form-check form-check-custom form-check-solid me-10" >
 																					<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
 																					'.$status.'
@@ -301,7 +301,7 @@
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
 																			<div class="menu-link">
-																				<a><i class="bi bi-three-dots-vertical"></i></a>
+																				<a class="mdlEdit" data-id="'.$item->ID_TASK.'" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
 																				<label class="ps-lg-3 form-check form-check-custom form-check-solid me-10">
 																					<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
 																					'.$status.'
@@ -361,7 +361,7 @@
 																	<div class="menu-sub menu-sub-accordion">
 																		<div class="menu-item">
 																			<div class="menu-link">
-																				<a><i class="bi bi-three-dots-vertical"></i></a>
+																				<a class="mdlEdit" data-id="'.$item->ID_TASK.'" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
 																				<label class="ps-lg-3 form-check form-check-custom form-check-solid me-10">
 																					<input class="form-check-input h-20px w-20px bg-secondary" type="checkbox" name="" value="today1" checked />
 																					'.$status.'
@@ -416,6 +416,15 @@
 		</div>
 		<!--end::Root-->
 		<script>
+			let tagsItem = [
+				<?php
+					foreach ($tags as $item) {
+						echo '{value: "'.$item->NAMA_TAG.'", id: "'.$item->ID_TAG.'"},';
+					}	
+				?>
+			]
+			let tagEdit, reminderEdit;
+			
 			$(document).ready(function() {
 				var tags1 = document.querySelector("#kt_tagify_1");
 				new Tagify(tags1, {
@@ -435,13 +444,6 @@
 				});
 
 				var tags2 = document.querySelector('#kt_tagify_2');
-				let tagsItem = [
-					<?php
-						foreach ($tags as $item) {
-							echo '{value: "'.$item->NAMA_TAG.'", id: "'.$item->ID_TAG.'"},';
-						}	
-					?>
-				]
 				new Tagify(tags2, {
 					whitelist: tagsItem,
 					maxTags: 10,
@@ -453,10 +455,82 @@
 					}
 				});
 
+				var tags3 = document.querySelector("#kt_tagify_3");
+					reminderEdit = new Tagify(tags3, {
+					whitelist: [
+						{value: "5 minutes ahead", reminder: "-5 minute"},
+						{value: "30 minutes ahead", reminder: "-30 minute"},
+						{value: "1 hour ahead", reminder: "-1 hour"},
+						{value: "1 day ahead", reminder: "-1 day"}
+					],
+					maxTags: 10,
+					dropdown: {
+						maxItems: 20, // <- mixumum allowed rendered suggestions
+						classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+						enabled: 0, // <- show suggestions on focus
+						closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected
+					}
+				});
+
+				var tags4 = document.querySelector('#kt_tagify_4');
+					tagEdit = new Tagify(tags4, {
+						whitelist: tagsItem,
+						maxTags: 10,
+						dropdown: {
+							maxItems: 20, // <- mixumum allowed rendered suggestions
+							classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+							enabled: 0, // <- show suggestions on focus
+							closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
+						}
+					});
+
 				$("#kt_datepicker_3").flatpickr({
 					enableTime: true,
 					dateFormat: "j F Y, H:i",
-					time_24hr: true
+					time_24hr: true,
+					// defaultDate: "today"
 				});
+			})
+
+			$('.mdlEdit').on('click', function(){
+				const id = $(this).data('id')
+				
+				$.ajax({
+					url: "<?= site_url('task/ajxGet')?>",
+					method: 'post',
+					data: {id},
+					success: function(res){
+						res = JSON.parse(res)
+						date = new Date(res['TASK']['TGL_TASK'])
+						tags = [];
+						reminders = [];
+
+						$('#mdlEdit_title').val(res['TASK']['NAMA_TASK']);
+						$('#mdlEdit_id').val(res['TASK']['ID_TASK']);
+						$('#mdlEdit_desc').html(res['TASK']['DESKRIPSI_TASK']);
+						$('#mdlEdit_prior').val(res['TASK']['PRIORITAS_TASK']).change();
+						$('#mdlEdit_folder').val(res['TASK']['ID_FOLDER']).change();
+						$("#kt_datepicker_4").flatpickr({
+							enableTime: true,
+							time_24hr: true,
+							dateFormat: "j F Y, H:i",
+							defaultDate: `${date.getDate()} ${getFullMonth(date.getMonth())} ${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`,
+						});
+						
+						tagEdit.removeAllTags()
+						for(const i of res['TASKTAG']){
+							tags.push({value: i['NAMA_TAG'], id: i['ID_TAG']})
+						}
+						tagEdit.addTags(tags)
+
+						reminderEdit.removeAllTags()
+						for(const i of res['TASKREMINDER']){
+							reminders.push(i['NAMA_REMINDER'])
+						}
+						reminderEdit.addTags(reminders)
+
+
+					}
+				})
 			})
 		</script>

@@ -45,4 +45,10 @@ class Task extends CI_Model{
     public function delete($param){
         $this->db->delete('task', $param);
     }
+    public function deleteTag($param){
+        $this->db->delete('task_tag', $param);
+    }
+    public function deleteReminder($param){
+        $this->db->delete('task_reminder', $param);
+    }
 }
