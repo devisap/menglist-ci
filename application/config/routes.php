@@ -63,10 +63,12 @@ $route['logout']    = 'AuthController/logout';
 
 // ======= USER =======
 // TASK
-$route['task']          = 'usr/TaskController';
-$route['task/store']    = 'usr/TaskController/store';
-$route['task/edit']     = 'usr/TaskController/edit';
-$route['task/ajxGet']   = 'usr/TaskController/ajxGet';
+$route['task']              = 'usr/TaskController';
+$route['task/store']        = 'usr/TaskController/store';
+$route['task/edit']         = 'usr/TaskController/edit';
+$route['task/changeStat']   = 'usr/TaskController/changeStat';
+$route['task/getDataTask']  = 'usr/TaskController/getDataTask';
+$route['task/ajxGet']       = 'usr/TaskController/ajxGet';
 
 // FOLDER
 $route['folder/store']  = 'usr/FolderController/store';
