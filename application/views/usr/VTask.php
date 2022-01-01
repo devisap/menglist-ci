@@ -66,188 +66,39 @@
 										<div class="w-100 hover-scroll-overlay-y d-flex pe-1" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu, #kt_aside_menu_wrapper" data-kt-scroll-offset="100">
 											<!--begin::Menu-->
 											<div class="menu menu-column menu-rounded fw-bold my-0" id="#kt_aside_menu" data-kt-menu="true">
-												<div data-kt-menu-trigger="click" class="menu-item menu-accordion show">
+												<div id="boxToday" data-kt-menu-trigger="click" class="menu-item menu-accordion show">
 													<span class="menu-link">
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Today</span>
 													</span>
-													<?php
-														foreach ($todays as $item) {
-															$status = "";
-															if($item->PRIORITAS_TASK != "0"){
-																$status = '
-																	<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
-																';
-															}
-
-															$date = "";
-															if($item->TGL_TASK != null){
-																$date='
-																	<span class="text-secondary">'.date_format(date_create($item->TGL_TASK), 'H:i').'</span>
-																';
-															}
-															echo '
-																<div class="menu-sub menu-sub-accordion">
-																	<div class="menu-item">
-																		<div class="menu-link">
-																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10" >
-																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
-																				'.$status.'
-																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
-																			</label>
-																			<div style="right: 5px;">
-																				'.$date.'
-																			</div>
-																			
-																		</div>
-																	</div>
-																</div>		
-															';
-														}
-													?>
-													
 												</div>
 
-												<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+												<div id="boxTomorrow" data-kt-menu-trigger="click" class="menu-item menu-accordion">
 													<span class="menu-link">
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Tomorrow</span>
 													</span>
-													<?php
-														foreach ($tomorrows as $item) {
-															$status = "";
-															if($item->PRIORITAS_TASK){
-																$status = '
-																	<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
-																';
-															}
-
-															$date = "";
-															if($item->TGL_TASK != null){
-																$date='
-																	<span class="text-secondary">'.date_format(date_create($item->TGL_TASK), 'H:i').'</span>
-																';
-															}
-															echo '
-																<div class="menu-sub menu-sub-accordion">
-																	<div class="menu-item">
-																		<div class="menu-link">
-																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10" >
-																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
-																				'.$status.'
-																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
-																			</label>
-																			'.$date.'
-																		</div>
-																	</div>
-																</div>		
-															';
-														}
-													?>
 												</div>
-												<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+												<div id="boxNxtWeek" data-kt-menu-trigger="click" class="menu-item menu-accordion">
 													<span class="menu-link">
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Next 7 Days</span>
 													</span>
-													<?php
-														foreach ($nxtWeeks as $item) {
-															$status = "";
-															if($item->PRIORITAS_TASK){
-																$status = '
-																	<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
-																';
-															}
-
-															$date = "";
-															if($item->TGL_TASK != null){
-																$date='
-																	<span class="text-secondary">'.date_format(date_create($item->TGL_TASK), 'j M Y H:i').'</span>
-																';
-															}
-															echo '
-																<div class="menu-sub menu-sub-accordion">
-																	<div class="menu-item">
-																		<div class="menu-link">
-																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10" >
-																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
-																				'.$status.'
-																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
-																			</label>
-																			'.$date.'
-																		</div>
-																	</div>
-																</div>		
-															';
-														}
-													?>
 												</div>
-
-												<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+												<div id="boxUndated" data-kt-menu-trigger="click" class="menu-item menu-accordion">
 													<span class="menu-link">
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Undated</span>
 													</span>
-													<div class="menu-sub menu-sub-accordion">
-														<?php
-															foreach ($undates as $item) {
-																$status = "";
-																if($item->PRIORITAS_TASK){
-																	$status = '
-																		<span class="ps-4 '.$item->COLOR_MP.'" style="font-weight: 700;" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
-																	';
-																}
-																echo '
-																<div class="menu-sub menu-sub-accordion">
-																	<div class="menu-item">
-																		<div class="menu-link">
-																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
-																				<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
-																				'.$status.'
-																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
-																			</label>
-																		</div>
-																	</div>
-																</div>		
-																';
-															}
-														?>
-													</div>
 												</div>
 
-												<div data-kt-menu-trigger="click" class="menu-item menu-accordion show">
+												<div id="boxCompleted" data-kt-menu-trigger="click" class="menu-item menu-accordion show">
 													<span class="menu-link">
 														<span class="menu-arrow"></span>
 														<span class="menu-title text-dark fw-bolder fs-4 px-2">Completed</span>
 													</span>
-														<?php
-															foreach ($completeds as $item) {
-																$status = "";
-																if($item->PRIORITAS_TASK){
-																	$status = '
-																		<span class="ps-4" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$item->NAMA_MP.'">'.$item->ALIAS_MP.'&nbsp;</span>
-																	';
-																}
-																echo '
-																<div class="menu-sub menu-sub-accordion">
-																	<div class="menu-item">
-																		<div class="menu-link">
-																			<label class="ps-lg-5 form-check form-check-custom form-check-solid me-10">
-																				<input class="form-check-input h-20px w-20px bg-secondary" type="checkbox" name="" value="today1" checked />
-																				'.$status.'
-																				<span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
-																			</label>
-																		</div>
-																	</div>
-																</div>		
-																';
-															}
-														?>
 												</div>
-
 											</div>
-
-
 											<!--end::Menu-->
 										</div>
 										<!--end::Aside Menu-->
@@ -269,6 +120,15 @@
 		</div>
 		<!--end::Root-->
 		<script>
+			let tagsItem = [
+				<?php
+					foreach ($tags as $item) {
+						echo '{value: "'.$item->NAMA_TAG.'", id: "'.$item->ID_TAG.'"},';
+					}	
+				?>
+			]
+			let tagEdit, reminderEdit;
+			
 			$(document).ready(function() {
 				var tags1 = document.querySelector("#kt_tagify_1");
 				new Tagify(tags1, {
@@ -288,13 +148,6 @@
 				});
 
 				var tags2 = document.querySelector('#kt_tagify_2');
-				let tagsItem = [
-					<?php
-						foreach ($tags as $item) {
-							echo '{value: "'.$item->NAMA_TAG.'", id: "'.$item->ID_TAG.'"},';
-						}	
-					?>
-				]
 				new Tagify(tags2, {
 					whitelist: tagsItem,
 					maxTags: 10,
@@ -306,10 +159,140 @@
 					}
 				});
 
+				var tags3 = document.querySelector("#kt_tagify_3");
+					reminderEdit = new Tagify(tags3, {
+					whitelist: [
+						{value: "5 minutes ahead", reminder: "-5 minute"},
+						{value: "30 minutes ahead", reminder: "-30 minute"},
+						{value: "1 hour ahead", reminder: "-1 hour"},
+						{value: "1 day ahead", reminder: "-1 day"}
+					],
+					maxTags: 10,
+					dropdown: {
+						maxItems: 20, // <- mixumum allowed rendered suggestions
+						classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+						enabled: 0, // <- show suggestions on focus
+						closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected
+					}
+				});
+
+				var tags4 = document.querySelector('#kt_tagify_4');
+					tagEdit = new Tagify(tags4, {
+						whitelist: tagsItem,
+						maxTags: 10,
+						dropdown: {
+							maxItems: 20, // <- mixumum allowed rendered suggestions
+							classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+							enabled: 0, // <- show suggestions on focus
+							closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
+						}
+					});
+
 				$("#kt_datepicker_3").flatpickr({
 					enableTime: true,
 					dateFormat: "j F Y, H:i",
-					time_24hr: true
+					time_24hr: true,
+					// defaultDate: "today"
 				});
+
+				getDataTask();
 			})
+			const getDataTask = () => {
+				$.ajax({
+					url: '<?= site_url('task/getDataTask')?>',
+					method: 'get',
+					success: function(res){
+						res = JSON.parse(res)
+						$('#boxToday').html(`
+							<span class="menu-link">
+								<span class="menu-arrow"></span>
+								<span class="menu-title text-dark fw-bolder fs-4 px-2">Today</span>
+							</span>
+							${res['HTMLTODAY']}
+						`);
+						$('#boxTomorrow').html(`
+							<span class="menu-link">
+								<span class="menu-arrow"></span>
+								<span class="menu-title text-dark fw-bolder fs-4 px-2">Tomorrow</span>
+							</span>
+							${res['HTMLTOMORROWS']}
+						`);
+						$('#boxNxtWeek').html(`
+							<span class="menu-link">
+								<span class="menu-arrow"></span>
+								<span class="menu-title text-dark fw-bolder fs-4 px-2">Next 7 Days</span>
+							</span>
+							${res['HTMLNXTWEEKS']}
+						`);
+						$('#boxUndated').html(`
+							<span class="menu-link">
+								<span class="menu-arrow"></span>
+								<span class="menu-title text-dark fw-bolder fs-4 px-2">Undated</span>
+							</span>
+							${res['HTMLUNDATES']}
+						`);
+						$('#boxCompleted').html(`
+							<span class="menu-link">
+								<span class="menu-arrow"></span>
+								<span class="menu-title text-dark fw-bolder fs-4 px-2">Completed</span>
+							</span>
+							${res['HTMLCOMPLETEDS']}
+						`);
+					}
+				})
+			}
+			const mdlEditOnClick = id => {				
+				$.ajax({
+					url: "<?= site_url('task/ajxGet')?>",
+					method: 'post',
+					data: {id},
+					success: function(res){
+						res = JSON.parse(res)
+						date = new Date(res['TASK']['TGL_TASK'])
+						tags = [];
+						reminders = [];
+
+						$('#mdlEdit_title').val(res['TASK']['NAMA_TASK']);
+						$('#mdlEdit_id').val(res['TASK']['ID_TASK']);
+						$('#mdlEdit_desc').html(res['TASK']['DESKRIPSI_TASK']);
+						$('#mdlEdit_prior').val(res['TASK']['PRIORITAS_TASK']).change();
+						$('#mdlEdit_folder').val(res['TASK']['ID_FOLDER']).change();
+						$("#kt_datepicker_4").flatpickr({
+							enableTime: true,
+							time_24hr: true,
+							dateFormat: "j F Y, H:i",
+							defaultDate: `${date.getDate()} ${getFullMonth(date.getMonth())} ${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`,
+						});
+						
+						tagEdit.removeAllTags()
+						for(const i of res['TASKTAG']){
+							tags.push({value: i['NAMA_TAG'], id: i['ID_TAG']})
+						}
+						tagEdit.addTags(tags)
+
+						reminderEdit.removeAllTags()
+						for(const i of res['TASKREMINDER']){
+							reminders.push(i['NAMA_REMINDER'])
+						}
+						reminderEdit.addTags(reminders)
+
+
+					}
+				})
+			}
+			const taskCheck = (id, status) => {
+				$.ajax({
+					url: '<?= site_url('task/changeStat')?>',
+					method: 'post',
+					data: {id, status},
+					success: function(res){
+						getDataTask()
+						if(status){
+							toastr.success("Successfully changed the task status to completed!", "Success");
+						}else{
+							toastr.success("Successfully changed the task status to progress!", "Success");
+						}
+					}
+				})
+			}
 		</script>
