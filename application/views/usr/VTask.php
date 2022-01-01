@@ -280,4 +280,19 @@
 					}
 				})
 			}
+			const taskCheck = (id, status) => {
+				$.ajax({
+					url: '<?= site_url('task/changeStat')?>',
+					method: 'post',
+					data: {id, status},
+					success: function(res){
+						getDataTask()
+						if(status){
+							toastr.success("Successfully changed the task status to completed!", "Success");
+						}else{
+							toastr.success("Successfully changed the task status to progress!", "Success");
+						}
+					}
+				})
+			}
 		</script>

@@ -76,7 +76,8 @@ class TaskController extends CI_Controller{
         redirect('task');
     }
     public function changeStat(){
-        $this->Task->update(['ID_TASK' => $_POST['ID_TASK'], 'ISFINISHED_TASK' => $_POST['STAT']]);
+        $this->Task->update(['ID_TASK' => $_POST['id'], 'ISFINISHED_TASK' => $_POST['status']]);
+        
         redirect('task');
     }
     public function ajxGet(){
@@ -135,7 +136,7 @@ class TaskController extends CI_Controller{
                             <div class="menu-link">
                                 <a class="mdlEdit" onclick="mdlEditOnClick('.$item->ID_TASK.')" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
                                 <label class="ps-lg-3 form-check form-check-custom form-check-solid me-10" >
-                                    <input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
+                                    <input class="form-check-input h-20px w-20px" onclick="taskCheck('.$item->ID_TASK.', 1)" type="checkbox" name="" value="1" />
                                     '.$status.'
                                     <span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
                                 </label>
@@ -203,7 +204,7 @@ class TaskController extends CI_Controller{
                             <div class="menu-link">
                                 <a class="mdlEdit" onclick="mdlEditOnClick('.$item->ID_TASK.')" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
                                 <label class="ps-lg-3 form-check form-check-custom form-check-solid me-10" >
-                                    <input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
+                                    <input class="form-check-input h-20px w-20px" onclick="taskCheck('.$item->ID_TASK.', 1)" type="checkbox" name="" value="1" />
                                     '.$status.'
                                     <span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
                                 </label>
@@ -267,7 +268,7 @@ class TaskController extends CI_Controller{
                             <div class="menu-link">
                                 <a class="mdlEdit" onclick="mdlEditOnClick('.$item->ID_TASK.')" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
                                 <label class="ps-lg-3 form-check form-check-custom form-check-solid me-10" >
-                                    <input class="form-check-input h-20px w-20px" type="checkbox" name="" value="1" />
+                                    <input class="form-check-input h-20px w-20px" onclick="taskCheck('.$item->ID_TASK.', 1)" type="checkbox" name="" value="1" />
                                     '.$status.'
                                     <span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
                                 </label>
@@ -325,7 +326,7 @@ class TaskController extends CI_Controller{
                         <div class="menu-link">
                             <a class="mdlEdit" onclick="mdlEditOnClick('.$item->ID_TASK.')" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
                             <label class="ps-lg-3 form-check form-check-custom form-check-solid me-10">
-                                <input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" />
+                                <input class="form-check-input h-20px w-20px" onclick="taskCheck('.$item->ID_TASK.', 1)" type="checkbox" name="" value="today1" />
                                 '.$status.'
                                 <span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
                             </label>
@@ -380,9 +381,9 @@ class TaskController extends CI_Controller{
                         <div class="menu-link">
                             <a class="mdlEdit" onclick="mdlEditOnClick('.$item->ID_TASK.')" data-bs-toggle="modal" data-bs-target="#mdlEditTask"><i class="bi bi-three-dots-vertical"></i></a>
                             <label class="ps-lg-3 form-check form-check-custom form-check-solid me-10">
-                                <input class="form-check-input h-20px w-20px bg-secondary" type="checkbox" name="" value="today1" checked />
+                                <input class="form-check-input h-20px w-20px" onclick="taskCheck('.$item->ID_TASK.', 0)" type="checkbox" name="" value="today1" checked />
                                 '.$status.'
-                                <span class="fw-bold ps-4">'.$item->NAMA_TASK.'</span>
+                                <span class="fw-bold ps-4" style="text-decoration: line-through;">'.$item->NAMA_TASK.'</span>
                             </label>
                             '.$taskTagHtml.'
                         </div>
