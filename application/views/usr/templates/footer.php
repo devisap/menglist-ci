@@ -30,6 +30,9 @@
                     }
                 ?>
             })
+            const alertPremium = () => {
+                alert('premium')
+            }
         </script>
 	</body>
 	<!--end::Body-->

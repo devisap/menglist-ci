@@ -11,16 +11,12 @@ class AuthController extends CI_Controller{
     public function vSignUp(){
         $this->load->view('VSignUp');
     }
-    public function logout(){
-        $this->session->sess_destroy();
-        redirect('/');
-    }
     public function login(){
         $param = $_POST;
         $user = $this->User->getById($param['EMAIL_USER']);
         if($user != null){
             if($user->PASSWORD_USER == hash('sha256', md5($param['PASSWORD_USER']))){
-                $this->setSession($param['EMAIL_USER'], $user->NAMA_USER);
+                $this->setSession($user->EMAIL_USER, $user->NAMA_USER, $user->ISPREMIUM_USER);
                 redirect('task');
             }
         }
@@ -33,12 +29,18 @@ class AuthController extends CI_Controller{
         $param['PASSWORD_USER'] = hash('sha256', md5($param['PASSWORD_USER']));
         
         $this->User->insert($param);
-        $this->setSession($param['EMAIL_USER'], $param['NAMA_USER']);
+        $user = $this->User->getById($param['EMAIL_USER']);
+        $this->setSession($user->EMAIL_USER, $user->NAMA_USER, $user->ISPREMIUM_USER);
         redirect('task');
     }
-    public function setSession($email, $nama){
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('/');
+    }
+    public function setSession($email, $nama, $isPremium){
         $this->session->set_userdata('email', $email);
         $this->session->set_userdata('nama', $nama);
+        $this->session->set_userdata('is_premium', $isPremium);
         $this->session->set_userdata('is_logged', true);
     }
 }
