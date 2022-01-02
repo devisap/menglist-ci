@@ -39,7 +39,7 @@
 							<!--begin::Page title-->
 							<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
 								<!--begin::Heading-->
-								<h1 class="d-flex flex-column text-dark fw-bolder my-0 fs-1">Tags
+								<span class="badge <?= $tag->BADGE_MC?>"><i class="bi bi-tag-fill text-<?= $tag->COLOR_MC?>"></i> <?= $tag->NAMA_TAG?></span>
 								<!-- <small class="text-muted fs-6 fw-bold ms-1 pt-1">You’ve got 24 New Sales</small></h1> -->
 								<!--end::Heading-->
 							</div>
@@ -90,50 +90,18 @@
                                         <div class="w-100 hover-scroll-overlay-y d-flex pe-1" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu, #kt_aside_menu_wrapper" data-kt-scroll-offset="100">
                                             <!--begin::Menu-->
                                             <div class="menu menu-column menu-rounded fw-bold my-0" id="#kt_aside_menu" data-kt-menu="true">
-                                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion show">
+                                                <div id="boxTask" data-kt-menu-trigger="click" class="menu-item menu-accordion show">
                                                     <span class="menu-link">
                                                         <span class="menu-arrow"></span>
                                                         <span class="menu-title text-dark fw-bolder fs-4 px-2">Task</span>
                                                     </span>
-                                                    <div class="menu-sub menu-sub-accordion">	
-                                                        <div class="menu-item">
-                                                            <label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" checked="checked" />
-																<span class="px-4 form-check-label fw-bold">Folder 1</span>
-															</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="menu-sub menu-sub-accordion">	
-                                                        <div class="menu-item">
-                                                            <label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today2" />
-																<span class="px-4 form-check-label fw-bold">Folder 2</span>
-															</label>
-                                                        </div>
-                                                    </div>
                                                 </div>
 
-                                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion show">
+                                                <div id="boxCompleted" data-kt-menu-trigger="click" class="menu-item menu-accordion show">
                                                     <span class="menu-link">
                                                         <span class="menu-arrow"></span>
                                                         <span class="menu-title text-dark fw-bolder fs-4 px-2">Completed</span>
                                                     </span>
-                                                    <div class="menu-sub menu-sub-accordion">	
-                                                        <div class="menu-item">
-                                                            <label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today1" checked="checked" />
-																<span class="px-4 form-check-label fw-bold">AP 1</span>
-															</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="menu-sub menu-sub-accordion">	
-                                                        <div class="menu-item">
-                                                            <label class="menu-link ps-lg-11 form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="" value="today2" checked="checked" />
-																<span class="px-4 form-check-label fw-bold">AP 3</span>
-															</label>
-                                                        </div>
-                                                    </div>
                                                 </div>
                 
                                             </div>
@@ -250,22 +218,166 @@
 			</span>
 			<!--end::Svg Icon-->
 		</div>
-		<!--end::Scrolltop-->
-		<!--end::Main-->
-		<script>var hostUrl = "<?= site_url()?>/assets/";</script>
-		<!--begin::Javascript-->
-		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="<?= site_url()?>/assets/plugins/global/plugins.bundle.js"></script>
-		<script src="<?= site_url()?>/assets/js/scripts.bundle.js"></script>
-		<!--end::Global Javascript Bundle-->
-		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="<?= site_url()?>/assets/js/custom/modals/new-target.js"></script>
-		<script src="<?= site_url()?>/assets/js/custom/widgets.js"></script>
-		<script src="<?= site_url()?>/assets/js/custom/apps/chat/chat.js"></script>
-		<script src="<?= site_url()?>/assets/js/custom/modals/create-app.js"></script>
-		<script src="<?= site_url()?>/assets/js/custom/modals/upgrade-plan.js"></script>
-		<!--end::Page Custom Javascript-->
-		<!--end::Javascript-->
+		<script>
+			let tagsItem = [
+				<?php
+					foreach ($tags as $item) {
+						echo '{value: "'.$item->NAMA_TAG.'", id: "'.$item->ID_TAG.'"},';
+					}	
+				?>
+			]
+			let tagEdit, reminderEdit;
+			
+			$(document).ready(function() {
+				var tags1 = document.querySelector("#kt_tagify_1");
+				new Tagify(tags1, {
+					whitelist: [
+						{value: "5 minutes ahead", reminder: "-5 minute"},
+						{value: "30 minutes ahead", reminder: "-30 minute"},
+						{value: "1 hour ahead", reminder: "-1 hour"},
+						{value: "1 day ahead", reminder: "-1 day"}
+					],
+					maxTags: 10,
+					dropdown: {
+						maxItems: 20, // <- mixumum allowed rendered suggestions
+						classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+						enabled: 0, // <- show suggestions on focus
+						closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected
+					}
+				});
+
+				var tags2 = document.querySelector('#kt_tagify_2');
+				new Tagify(tags2, {
+					whitelist: tagsItem,
+					maxTags: 10,
+					dropdown: {
+						maxItems: 20, // <- mixumum allowed rendered suggestions
+						classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+						enabled: 0, // <- show suggestions on focus
+						closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
+					}
+				});
+
+				var tags3 = document.querySelector("#kt_tagify_3");
+					reminderEdit = new Tagify(tags3, {
+					whitelist: [
+						{value: "5 minutes ahead", reminder: "-5 minute"},
+						{value: "30 minutes ahead", reminder: "-30 minute"},
+						{value: "1 hour ahead", reminder: "-1 hour"},
+						{value: "1 day ahead", reminder: "-1 day"}
+					],
+					maxTags: 10,
+					dropdown: {
+						maxItems: 20, // <- mixumum allowed rendered suggestions
+						classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+						enabled: 0, // <- show suggestions on focus
+						closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected
+					}
+				});
+
+				var tags4 = document.querySelector('#kt_tagify_4');
+					tagEdit = new Tagify(tags4, {
+						whitelist: tagsItem,
+						maxTags: 10,
+						dropdown: {
+							maxItems: 20, // <- mixumum allowed rendered suggestions
+							classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+							enabled: 0, // <- show suggestions on focus
+							closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
+						}
+					});
+
+				$("#kt_datepicker_3").flatpickr({
+					enableTime: true,
+					dateFormat: "j F Y, H:i",
+					time_24hr: true,
+					// defaultDate: "today"
+				});
+
+				getDataTask();
+			})
+			const getDataTask = () => {
+				$.ajax({
+					url: '<?= site_url('tags/getDataTask/'.$idTag)?>',
+					method: 'get',
+					success: function(res){
+						res = JSON.parse(res)
+						$('#boxTask').html(`
+							<span class="menu-link">
+								<span class="menu-arrow"></span>
+								<span class="menu-title text-dark fw-bolder fs-4 px-2">Task</span>
+							</span>
+							${res['HTMLTASK']}
+						`);
+						$('#boxCompleted').html(`
+							<span class="menu-link">
+								<span class="menu-arrow"></span>
+								<span class="menu-title text-dark fw-bolder fs-4 px-2">Completed</span>
+							</span>
+							${res['HTMLCOMPLETEDS']}
+						`);
+					}
+				})
+			}
+			const mdlEditOnClick = id => {				
+				$.ajax({
+					url: "<?= site_url('task/ajxGet')?>",
+					method: 'post',
+					data: {id},
+					success: function(res){
+						res = JSON.parse(res)
+						date = new Date(res['TASK']['TGL_TASK'])
+						tags = [];
+						reminders = [];
+
+						$('#mdlEdit_title').val(res['TASK']['NAMA_TASK']);
+						$('#mdlEdit_id').val(res['TASK']['ID_TASK']);
+						$('#mdlEdit_desc').html(res['TASK']['DESKRIPSI_TASK']);
+						$('#mdlEdit_prior').val(res['TASK']['PRIORITAS_TASK']).change();
+						$('#mdlEdit_folder').val(res['TASK']['ID_FOLDER']).change();
+						$('#mdlDelete_id').val(res['TASK']['ID_TASK']);
+						$("#kt_datepicker_4").flatpickr({
+							enableTime: true,
+							time_24hr: true,
+							dateFormat: "j F Y, H:i",
+							defaultDate: `${date.getDate()} ${getFullMonth(date.getMonth())} ${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`,
+						});
+						
+						tagEdit.removeAllTags()
+						for(const i of res['TASKTAG']){
+							tags.push({value: i['NAMA_TAG'], id: i['ID_TAG']})
+						}
+						tagEdit.addTags(tags)
+
+						reminderEdit.removeAllTags()
+						for(const i of res['TASKREMINDER']){
+							reminders.push(i['NAMA_REMINDER'])
+						}
+						reminderEdit.addTags(reminders)
+					}
+				})
+			}
+			const taskCheck = (id, status) => {
+				$.ajax({
+					url: '<?= site_url('task/changeStat')?>',
+					method: 'post',
+					data: {id, status},
+					success: function(res){
+						getDataTask()
+						if(status){
+							toastr.success("Successfully changed the task status to completed!", "Success");
+						}else{
+							toastr.success("Successfully changed the task status to progress!", "Success");
+						}
+					}
+				})
+			}
+			const deleteTask = () => {
+				$('#frmDelete').submit();
+			}
+		</script>
+		
 	</body>
 	<!--end::Body-->
 </html>
+
