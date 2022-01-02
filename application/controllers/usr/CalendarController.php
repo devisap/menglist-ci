@@ -5,9 +5,14 @@ class CalendarController extends CI_Controller{
         parent::__construct();
         if($this->session->userdata('is_logged') == false){
             redirect('sign-in');
-        }       
+        }
+        $this->load->model('User');       
     }
     public function index(){
-        $this->load->view('VCalendar');
+        $dataUser = $this->User->getAll();
+        $data['title']      = "Calendar";
+        $data['user']      = $dataUser;
+
+        $this->template->user('usr/VCalendar', $data);
     }
 }
