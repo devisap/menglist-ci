@@ -84,3 +84,6 @@ $route['tags/getDataTask/(:any)']   = 'usr/TagController/getDataTask/$1';
 
 $route['calendar']  = 'usr/CalendarController';
 $route['statistic'] = 'usr/StatisticController';
+
+//SIDE ADMIN
+$route['user']  = 'admin/UserController/vDaftarUser';
