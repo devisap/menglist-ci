@@ -300,3 +300,9 @@
 				$('#frmDelete').submit();
 			}
 		</script>
+
+	<script type="text/javascript">
+		$(window).on('load', function() {
+			$('#mdl_premTask').modal('show');
+		});
+	</script>
