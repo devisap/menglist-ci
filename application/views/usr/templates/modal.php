@@ -24,7 +24,7 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('task/store')?>" method="post">
+                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('task/store') ?>" method="post">
                     <!--begin::Heading-->
                     <div class="mb-13"></div>
                     <!--end::Heading-->
@@ -115,11 +115,11 @@
                         <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select Folder" name="ID_FOLDER">
                             <option value="">Select Folder...</option>
                             <?php
-                                foreach ($folders as $item) {
-                                    echo '
-                                        <option value="'.$item->ID_FOLDER.'">'.$item->NAMA_FOLDER.'</option>
+                            foreach ($folders as $item) {
+                                echo '
+                                        <option value="' . $item->ID_FOLDER . '">' . $item->NAMA_FOLDER . '</option>
                                     ';
-                                }
+                            }
                             ?>
                         </select>
                     </div>
@@ -130,9 +130,9 @@
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
-                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
-                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email')?>">
+                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email') ?>">
                     </div>
                     <!--end::Actions-->
                 </form>
@@ -171,7 +171,7 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('task/edit')?>" method="post">
+                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('task/edit') ?>" method="post">
                     <!--begin::Heading-->
                     <div class="mb-13"></div>
                     <!--end::Heading-->
@@ -262,11 +262,11 @@
                         <select id="mdlEdit_folder" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select Folder" name="ID_FOLDER">
                             <option value="">Select Folder...</option>
                             <?php
-                                foreach ($folders as $item) {
-                                    echo '
-                                        <option value="'.$item->ID_FOLDER.'">'.$item->NAMA_FOLDER.'</option>
+                            foreach ($folders as $item) {
+                                echo '
+                                        <option value="' . $item->ID_FOLDER . '">' . $item->NAMA_FOLDER . '</option>
                                     ';
-                                }
+                            }
                             ?>
                         </select>
                     </div>
@@ -278,14 +278,14 @@
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
-                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
-                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email')?>">
+                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email') ?>">
                         <input type="hidden" id="mdlEdit_id" name="ID_TASK">
                     </div>
                     <!--end::Actions-->
                 </form>
-                <form id="frmDelete" action="<?= site_url('task/destroy')?>" method="post">
+                <form id="frmDelete" action="<?= site_url('task/destroy') ?>" method="post">
                     <input type="hidden" name="ID_TASK" id="mdlDelete_id">
                 </form>
                 <!--end:Form-->
@@ -305,7 +305,7 @@
         <div class="modal-content rounded">
             <!--begin::Modal header-->
             <div class="modal-header pb-0 border-0 justify-content-between">
-                <h5 class="modal-title text-left fs-1">Add Folder <i class="bi bi-archive-fill fs-2x"></i></h5> 
+                <h5 class="modal-title text-left fs-1">Add Folder <i class="bi bi-archive-fill fs-2x"></i></h5>
                 <!--begin::Close-->
                 <div class="btn btn-sm btn-icon btn-active-color-primary " data-bs-dismiss="modal">
                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
@@ -323,7 +323,7 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('folder/store')?>" method="post">
+                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('folder/store') ?>" method="post">
                     <!--begin::Heading-->
                     <div class="mb-13"></div>
                     <!--end::Heading-->
@@ -342,7 +342,7 @@
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="">Choose color</span> 
+                            <span class="">Choose color</span>
                             <!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i> -->
                         </label>
                         <!--end::Label-->
@@ -371,9 +371,9 @@
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
-                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
-                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email')?>">
+                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email') ?>">
                     </div>
                     <!--end::Actions-->
                 </form>
@@ -395,7 +395,7 @@
         <div class="modal-content rounded">
             <!--begin::Modal header-->
             <div class="modal-header pb-0 border-0 justify-content-between">
-                <h5 class="modal-title text-left fs-1">Add Tag <i class="bi bi-tag-fill fs-2x"></i></h5> 
+                <h5 class="modal-title text-left fs-1">Add Tag <i class="bi bi-tag-fill fs-2x"></i></h5>
                 <!--begin::Close-->
                 <div class="btn btn-sm btn-icon btn-active-color-primary " data-bs-dismiss="modal">
                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
@@ -413,7 +413,7 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('tags/store')?>" method="post">
+                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('tags/store') ?>" method="post">
                     <!--begin::Heading-->
                     <div class="mb-13"></div>
                     <!--end::Heading-->
@@ -445,7 +445,7 @@
                             </select>
                         </div>
                         <div class="col-md-6">
-                            
+
                         </div>
                     </div>
                     <!--end::Input group-->
@@ -455,9 +455,9 @@
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
-                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
-                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email')?>">
+                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email') ?>">
                     </div>
                     <!--end::Actions-->
                 </form>
@@ -470,6 +470,159 @@
     <!--end::Modal dialog-->
 </div>
 <!--end::Modal - New Target-->
+
+    <!--begin::Modal - New Target-->
+    <div class="modal hide fade" id="mdl_premCalendar">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-600px">
+            <!--begin::Modal content-->
+            <div class="modal-content rounded">
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                    <!--begin:Form-->
+                    <!--begin::Heading-->
+                    <div class="mb-13"></div>
+                    <!--end::Heading-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <img src="<?= base_url()?>assets/media/portfolio/calendar.png" alt="Premium">
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="text-center mt-10">
+                        <h2 class="text-center">Calendar View</h2>
+                        <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
+                        <button type="submit" id="" class="btn btn-primary">
+                            <span class="indicator-label">Upgrade Now</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                    </div>
+                    <!--end::Actions-->
+                    <!--end:Form-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+    <!--end::Modal - New Target-->
+
+        <!--begin::Modal - New Target-->
+        <div class="modal hide fade" id="mdl_premCalendar">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-600px">
+            <!--begin::Modal content-->
+            <div class="modal-content rounded">
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                    <!--begin:Form-->
+                    <!--begin::Heading-->
+                    <div class="mb-13"></div>
+                    <!--end::Heading-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <img src="<?= base_url()?>assets/media/portfolio/calendar.png" alt="Premium">
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="text-center mt-10">
+                        <h2 class="text-center">Statistic View</h2>
+                        <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
+                        <button type="submit" id="" class="btn btn-primary">
+                            <span class="indicator-label">Upgrade Now</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                    </div>
+                    <!--end::Actions-->
+                    <!--end:Form-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+    <!--end::Modal - New Target-->
+
+    <!--begin::Modal - New Target-->
+        <div class="modal hide fade" id="mdl_premStatistic">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-600px">
+            <!--begin::Modal content-->
+            <div class="modal-content rounded">
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                    <!--begin:Form-->
+                    <!--begin::Heading-->
+                    <div class="mb-13"></div>
+                    <!--end::Heading-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <img src="<?= base_url()?>assets/media/portfolio/statistic.png" alt="Premium">
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="text-center mt-10">
+                        <h2 class="text-center">Statistic View</h2>
+                        <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
+                        <button type="submit" id="" class="btn btn-primary">
+                            <span class="indicator-label">Upgrade Now</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                    </div>
+                    <!--end::Actions-->
+                    <!--end:Form-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+    <!--end::Modal - New Target-->
+
+     <!--begin::Modal - New Target-->
+     <div class="modal hide fade" id="mdl_premTask">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-600px">
+            <!--begin::Modal content-->
+            <div class="modal-content rounded">
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                    <!--begin:Form-->
+                    <!--begin::Heading-->
+                    <div class="mb-13"></div>
+                    <!--end::Heading-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <img src="<?= base_url()?>assets/media/portfolio/task.png" alt="Premium">
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="text-center mt-10">
+                        <h2 class="text-center">Task View</h2>
+                        <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
+                        <button type="submit" id="" class="btn btn-primary">
+                            <span class="indicator-label">Upgrade Now</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                    </div>
+                    <!--end::Actions-->
+                    <!--end:Form-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+    <!--end::Modal - New Target-->
+
 <script>
     const getFullMonth = month => {
         switch (month) {
@@ -514,3 +667,4 @@
         }
     }
 </script>
+
