@@ -26,7 +26,7 @@ class Task extends CI_Model{
     }
     public function getUndate($param){
         return $this->db->query("
-            SELECT * FROM v_task WHERE EMAIL_USER = '".$param['EMAIL_USER']."' AND TGL_TASK IS NULL
+            SELECT * FROM v_task WHERE EMAIL_USER = '".$param['EMAIL_USER']."' AND ISFINISHED_TASK = '0' AND TGL_TASK IS NULL
         ")->result();
     }
     public function insert($param){

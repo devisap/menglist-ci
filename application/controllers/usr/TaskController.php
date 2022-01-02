@@ -13,12 +13,6 @@ class TaskController extends CI_Controller{
         $data['folders']    = $this->General->get('folder', ['EMAIL_USER' => $this->session->userdata('email')]);
         $data['tags']       = $this->General->get('tag', ['EMAIL_USER' => $this->session->userdata('email')]);
 
-        $email          = $this->session->userdata('email');
-        $currDate       = date('Y-m-d');
-        $tomDate        = date('Y-m-d', strtotime("+1 day", strtotime($currDate)));
-        $data['todays']     = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK) <" => $tomDate, 'orderBy' => "TGL_TASK ASC"]);
-        
-
         $this->template->user('usr/VTask', $data);
     }
     public function store(){
@@ -182,7 +176,6 @@ class TaskController extends CI_Controller{
     public function getTomorrows($email, $tomDate){
         $tomorrows  = $this->Task->get(['EMAIL_USER' => $email, 'ISFINISHED_TASK' => "0", "DATE(TGL_TASK)" => $tomDate, 'orderBy' => "TGL_TASK ASC"]);
         $html       = '';
-        
 
         if($tomorrows != null){
             foreach ($tomorrows as $item) {

@@ -2,10 +2,10 @@
 
 class Tag extends CI_Model{
     public function getAll(){
-        return $this->db->get('tag')->result();
+        return $this->db->get('v_tag')->result();
     }
     public function getById($id){
-        return $this->db->get_where('tag', ['ID_TAG' => $id])->row();
+        return $this->db->get_where('v_tag', ['ID_TAG' => $id])->row();
     }
     public function get($param){
         if(!empty($param['orderBy'])){ // order by
@@ -17,7 +17,7 @@ class Tag extends CI_Model{
             unset($param['limit']);
         }
 
-        return $this->db->get_where('tag', $param)->result();
+        return $this->db->get_where('v_tag', $param)->result();
     }
     public function insert($param){
         $this->db->insert('tag', $param);

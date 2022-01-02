@@ -72,12 +72,14 @@ $route['task/getDataTask']  = 'usr/TaskController/getDataTask';
 $route['task/ajxGet']       = 'usr/TaskController/ajxGet';
 
 // FOLDER
-$route['folder/store']  = 'usr/FolderController/store';
-$route['folder/(:any)'] = 'usr/FolderController/vFolder/$1';
+$route['folder/store']              = 'usr/FolderController/store';
+$route['folder/(:any)']             = 'usr/FolderController/vFolder/$1';
+$route['folder/getDataTask/(:any)'] = 'usr/FolderController/getDataTask/$1';
 
 // TAG
-$route['tags/store']  = 'usr/TagController/store';
-$route['tags/(:any)'] = 'usr/TagController/vTag/$1';
+$route['tags/store']                = 'usr/TagController/store';
+$route['tags/(:any)']               = 'usr/TagController/vTag/$1';
+$route['tags/getDataTask/(:any)']   = 'usr/TagController/getDataTask/$1';
 
 
 $route['calendar']  = 'usr/CalendarController';
