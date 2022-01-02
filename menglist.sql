@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 01, 2022 at 04:39 PM
+-- Generation Time: Jan 02, 2022 at 08:28 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -39,7 +39,8 @@ CREATE TABLE `folder` (
 --
 
 INSERT INTO `folder` (`ID_FOLDER`, `EMAIL_USER`, `NAMA_FOLDER`, `IMG_FOLDER`) VALUES
-(5, 'ilham.sagitaputra@gmail.com', 'Folder 1', NULL);
+(5, 'ilham.sagitaputra@gmail.com', 'Folder 1', NULL),
+(6, 'ilham.sagitaputra@gmail.com', 'Folder 2', NULL);
 
 -- --------------------------------------------------------
 
@@ -138,11 +139,8 @@ CREATE TABLE `task` (
 --
 
 INSERT INTO `task` (`ID_TASK`, `EMAIL_USER`, `ID_FOLDER`, `NAMA_TASK`, `DESKRIPSI_TASK`, `TGL_TASK`, `ISFINISHED_TASK`, `PRIORITAS_TASK`) VALUES
-(34, 'ilham.sagitaputra@gmail.com', '5', 'Buat baru', '', NULL, 0x30, 0),
-(35, 'ilham.sagitaputra@gmail.com', '5', 'Mencari batu idaman', 'oke', '2022-01-04 17:00:00', 0x31, 2),
-(36, 'ilham.sagitaputra@gmail.com', '5', 'ST122', '', '1993-06-24 17:00:00', 0x30, 0),
-(37, 'ilham.sagitaputra@gmail.com', '', 'Mencoba mengerti', '', '2022-01-01 05:00:00', 0x30, 0),
-(38, 'ilham.sagitaputra@gmail.com', '', 'Mecards', '', '2022-01-02 08:00:00', 0x30, 0);
+(39, 'ilham.sagitaputra@gmail.com', '5', 'Menggembala', 'Menggembala sapi', '2022-01-02 19:00:00', 0x31, 4),
+(40, 'ilham.sagitaputra@gmail.com', '6', 'Task yang berada di folder 2', '', NULL, 0x30, 0);
 
 -- --------------------------------------------------------
 
@@ -164,12 +162,8 @@ CREATE TABLE `task_reminder` (
 --
 
 INSERT INTO `task_reminder` (`ID_TASK`, `EMAIL_USER`, `REMINDER`, `created_at`, `STATUS`, `NAMA_REMINDER`) VALUES
-(NULL, 'ilham.sagitaputra@gmail.com', '0000-00-00 00:00:00', '2021-12-31 07:32:33', 0x30, '5 minutes ahead'),
-(NULL, 'ilham.sagitaputra@gmail.com', '0000-00-00 00:00:00', '2021-12-31 07:32:33', 0x30, '30 minutes ahead'),
-(36, 'ilham.sagitaputra@gmail.com', '1993-06-24 16:55:00', '2021-12-31 07:40:03', 0x30, '5 minutes ahead'),
-(36, 'ilham.sagitaputra@gmail.com', '1993-06-24 16:30:00', '2021-12-31 07:40:03', 0x30, '30 minutes ahead'),
-(35, 'ilham.sagitaputra@gmail.com', '2022-01-04 16:55:00', '2022-01-01 15:15:44', 0x30, '5 minutes ahead'),
-(38, 'ilham.sagitaputra@gmail.com', '2022-01-02 07:55:00', '2022-01-01 15:18:02', 0x30, '5 minutes ahead');
+(39, 'ilham.sagitaputra@gmail.com', '2022-01-02 18:30:00', '2022-01-02 03:22:26', 0x30, '30 minutes ahead'),
+(40, 'ilham.sagitaputra@gmail.com', '0000-00-00 00:00:00', '2022-01-02 03:56:46', 0x30, '5 minutes ahead');
 
 -- --------------------------------------------------------
 
@@ -187,17 +181,10 @@ CREATE TABLE `task_tag` (
 --
 
 INSERT INTO `task_tag` (`ID_TASK`, `ID_TAG`) VALUES
-(NULL, 5),
-(NULL, 6),
-(NULL, 9),
-(36, 5),
-(36, 7),
-(34, 5),
-(37, 8),
-(35, 5),
-(35, 8),
-(35, 9),
-(38, 6);
+(39, 5),
+(39, 6),
+(40, 5),
+(40, 6);
 
 -- --------------------------------------------------------
 
@@ -260,6 +247,24 @@ CREATE TABLE `v_task` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `v_task_folder`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_task_folder` (
+`ID_TASK` int(11)
+,`EMAIL_USER` varchar(100)
+,`ID_FOLDER` varchar(10)
+,`NAMA_TASK` varchar(100)
+,`DESKRIPSI_TASK` text
+,`TGL_TASK` timestamp
+,`ISFINISHED_TASK` binary(1)
+,`PRIORITAS_TASK` smallint(6)
+,`NAMA_FOLDER` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `v_task_tag`
 -- (See below for the actual view)
 --
@@ -267,6 +272,8 @@ CREATE TABLE `v_task_tag` (
 `ID_TASK` int(11)
 ,`ID_TAG` int(11)
 ,`NAMA_TAG` varchar(100)
+,`ISFINISHED_TASK` binary(1)
+,`TGL_TASK` timestamp
 ,`BADGE_MC` varchar(100)
 ,`COLOR_MC` varchar(100)
 );
@@ -292,11 +299,20 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Structure for view `v_task_folder`
+--
+DROP TABLE IF EXISTS `v_task_folder`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_task_folder`  AS SELECT `t`.`ID_TASK` AS `ID_TASK`, `t`.`EMAIL_USER` AS `EMAIL_USER`, `t`.`ID_FOLDER` AS `ID_FOLDER`, `t`.`NAMA_TASK` AS `NAMA_TASK`, `t`.`DESKRIPSI_TASK` AS `DESKRIPSI_TASK`, `t`.`TGL_TASK` AS `TGL_TASK`, `t`.`ISFINISHED_TASK` AS `ISFINISHED_TASK`, `t`.`PRIORITAS_TASK` AS `PRIORITAS_TASK`, `f`.`NAMA_FOLDER` AS `NAMA_FOLDER` FROM (`task` `t` join `folder` `f`) WHERE `t`.`ID_FOLDER` = `f`.`ID_FOLDER` ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `v_task_tag`
 --
 DROP TABLE IF EXISTS `v_task_tag`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_task_tag`  AS SELECT `tt`.`ID_TASK` AS `ID_TASK`, `tt`.`ID_TAG` AS `ID_TAG`, `t`.`NAMA_TAG` AS `NAMA_TAG`, `mc`.`BADGE_MC` AS `BADGE_MC`, `mc`.`COLOR_MC` AS `COLOR_MC` FROM ((`task_tag` `tt` join `tag` `t`) join `master_color` `mc`) WHERE `tt`.`ID_TAG` = `t`.`ID_TAG` AND `t`.`WARNA_TAG` = `mc`.`ID_MC` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_task_tag`  AS SELECT `tt`.`ID_TASK` AS `ID_TASK`, `tt`.`ID_TAG` AS `ID_TAG`, `t`.`NAMA_TAG` AS `NAMA_TAG`, `ta`.`ISFINISHED_TASK` AS `ISFINISHED_TASK`, `ta`.`TGL_TASK` AS `TGL_TASK`, `mc`.`BADGE_MC` AS `BADGE_MC`, `mc`.`COLOR_MC` AS `COLOR_MC` FROM (((`task_tag` `tt` join `tag` `t`) join `task` `ta`) join `master_color` `mc`) WHERE `tt`.`ID_TASK` = `ta`.`ID_TASK` AND `tt`.`ID_TAG` = `t`.`ID_TAG` AND `t`.`WARNA_TAG` = `mc`.`ID_MC` ;
 
 --
 -- Indexes for dumped tables
@@ -363,7 +379,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `folder`
 --
 ALTER TABLE `folder`
-  MODIFY `ID_FOLDER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_FOLDER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `master_color`
@@ -387,7 +403,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `ID_TASK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_TASK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Constraints for dumped tables
