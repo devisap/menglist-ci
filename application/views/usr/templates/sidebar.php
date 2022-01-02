@@ -111,7 +111,7 @@
                     <?php
                         $statusPremium = 'href="'.site_url('calendar').'"';
                         if($this->session->userdata('is_premium') == '0'){
-                            $statusPremium = 'onclick="alertPremium()"';
+                            $statusPremium = 'onclick="alertPremium(\'mdl_premCalendar\')"';
                         }
 
                         echo '
@@ -129,7 +129,7 @@
                     <?php
                         $statusPremium = 'href="'.site_url('statistic').'"';
                         if($this->session->userdata('is_premium') == '0'){
-                            $statusPremium = 'onclick="alertPremium()"';
+                            $statusPremium = 'onclick="alertPremium(\'mdl_premStatistic\')"';
                         }
 
                         echo '
@@ -168,7 +168,7 @@
                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder lh-1"><?= $this->session->userdata('nama')?></a>
                     <!--end::Name-->
                     <!--begin::Major-->
-                    <span class="text-muted fw-bold d-block fs-7 lh-1">Free</span>
+                    <span class="text-muted fw-bold d-block fs-7 lh-1"><?= $this->session->userdata('is_premium') == "0" ? 'Basic' : 'Premium'?></span>
                     <!--end::Major-->
                 </div>
                 <!--end::User info-->

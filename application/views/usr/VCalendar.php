@@ -387,9 +387,9 @@
 		<!--end::Javascript-->
 
 		<script type="text/javascript">
-			$(window).on('load', function() {
-				$('#mdl_premCalendar').modal('show');
-			});
+			// $(window).on('load', function() {
+			// 	$('#mdl_premCalendar').modal('show');
+			// });
 		</script>
 	</body>
 	<!--end::Body-->

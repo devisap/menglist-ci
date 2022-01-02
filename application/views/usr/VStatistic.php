@@ -245,9 +245,9 @@
 	</script>
 
 	<script type="text/javascript">
-		$(window).on('load', function() {
-			$('#mdl_premStatistic').modal('show');
-		});
+		// $(window).on('load', function() {
+		// 	$('#mdl_premStatistic').modal('show');
+		// });
 	</script>
 </body>
 <!--end::Body-->

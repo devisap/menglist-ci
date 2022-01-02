@@ -30,9 +30,14 @@
                     }
                 ?>
             })
-            const alertPremium = () => {
-                alert('premium')
+            const alertPremium = modal => {
+                $('#'+modal).modal('show');
             }
+            $('.inptReminder').change(function(){
+                let value = $(this).val();
+                // JSON.parse(value)
+                console.log(value)
+            })
         </script>
 	</body>
 	<!--end::Body-->
