@@ -40,6 +40,7 @@
                     <div class="menu-sub menu-sub-accordion">	
                         <div class="menu-item">
                             <?php
+                                $count = 0;
                                 foreach ($folders as $item) {
                                     echo '
                                     <a class="menu-link" href="'.site_url('folder/'.$item->ID_FOLDER).'">
@@ -47,12 +48,23 @@
                                             <span class="menu-title">'.$item->NAMA_FOLDER.'</span>
                                         </a>
                                     ';
+                                    $count++;
                                 }
+
+                                $statusPremium = 'data-bs-toggle="modal" data-bs-target="#mdl_newFolder"';
+                                if($this->session->userdata('is_premium') == '0'){
+                                    if($count > 4){
+                                        $statusPremium = 'onclick="alertPremium()"';
+                                    }
+                                }
+
+                                echo '
+                                    <a class="menu-link" '.$statusPremium.'>
+                                        <i class="bi bi-plus"></i> &nbsp;
+                                        <span class="menu-title">Add new folder</span>
+                                    </a>    
+                                ';
                             ?>
-                            <a class="menu-link" data-bs-toggle="modal" data-bs-target="#mdl_newFolder">
-                                <i class="bi bi-plus"></i> &nbsp;
-                                <span class="menu-title">Add new folder</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -76,33 +88,62 @@
                                         </a>
                                     ';
                                 }
+
+                                $statusPremium = 'data-bs-toggle="modal" data-bs-target="#mdl_newTag"';
+                                if($this->session->userdata('is_premium') == '0'){
+                                    if($count > 4){
+                                        $statusPremium = 'onclick="alertPremium()"';
+                                    }
+                                }
+
+                                echo '
+                                    <a class="menu-link" '.$statusPremium.'>
+                                        <i class="bi bi-plus"></i> &nbsp;
+                                        <span class="menu-title">Add new tag</span>
+                                    </a>
+                                ';
                             ?>
-                            <a class="menu-link" data-bs-toggle="modal" data-bs-target="#mdl_newTag">
-                                <i class="bi bi-plus"></i> &nbsp;
-                                <span class="menu-title">Add new tag</span>
-                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('calendar'); ?>">
-                        <span class="menu-icon">
-                            <img alt="Logo" src="<?= base_url()?>assets/media/icons/calendar-10.png" class="h-20px logo" />
-                        </span>
-                        <span class="menu-title">Calendar</span>
-                    </a>
+                    <?php
+                        $statusPremium = 'href="'.site_url('calendar').'"';
+                        if($this->session->userdata('is_premium') == '0'){
+                            $statusPremium = 'onclick="alertPremium(\'mdl_premCalendar\')"';
+                        }
+
+                        echo '
+                            <a class="menu-link" '.$statusPremium.'>
+                                <span class="menu-icon">
+                                    <img alt="Logo" src="'.base_url().'assets/media/icons/calendar-10.png" class="h-20px logo" />
+                                </span>
+                                <span class="menu-title">Calendar</span>
+                            </a>    
+                        ';
+                    ?>
                 </div>
 
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('statistic'); ?>">
-                        <span class="menu-icon">
-                            <img alt="Logo" src="<?= base_url()?>assets/media/icons/statistics.png" class="h-20px logo" />
-                            </span>
-                            <!--end::Svg Icon-->
-                        </span>
-                        <span class="menu-title">Statistic</span>
-                    </a>
+                    <?php
+                        $statusPremium = 'href="'.site_url('statistic').'"';
+                        if($this->session->userdata('is_premium') == '0'){
+                            $statusPremium = 'onclick="alertPremium(\'mdl_premStatistic\')"';
+                        }
+
+                        echo '
+                            <a class="menu-link" '.$statusPremium.'>
+                                <span class="menu-icon">
+                                    <img alt="Logo" src="'.base_url().'assets/media/icons/statistics.png" class="h-20px logo" />
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </span>
+                                <span class="menu-title">Statistic</span>
+                            </a>    
+                        ';
+                    ?>
+                    
                 </div>
             </div>
             <!--end::Menu-->
@@ -127,7 +168,7 @@
                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder lh-1"><?= $this->session->userdata('nama')?></a>
                     <!--end::Name-->
                     <!--begin::Major-->
-                    <span class="text-muted fw-bold d-block fs-7 lh-1">Free</span>
+                    <span class="text-muted fw-bold d-block fs-7 lh-1"><?= $this->session->userdata('is_premium') == "0" ? 'Basic' : 'Premium'?></span>
                     <!--end::Major-->
                 </div>
                 <!--end::User info-->

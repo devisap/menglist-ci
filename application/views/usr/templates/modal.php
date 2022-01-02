@@ -95,7 +95,7 @@
                             <!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target priorty"></i> -->
                         </label>
                         <!--end::Label-->
-                        <input id="kt_tagify_1" class="form-control form-control-solid" value="" name="PENGINGAT_TASK" />
+                        <input id="kt_tagify_1" class="form-control form-control-solid inptReminder" value="" name="PENGINGAT_TASK" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
@@ -242,7 +242,7 @@
                             <!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target priorty"></i> -->
                         </label>
                         <!--end::Label-->
-                        <input id="kt_tagify_3" class="form-control form-control-solid" value="" name="PENGINGAT_TASK" />
+                        <input id="kt_tagify_3" class="form-control form-control-solid inptReminder" value="" name="PENGINGAT_TASK" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
@@ -624,6 +624,80 @@
     <!--end::Modal - New Target-->
 
 <script>
+    let tagsItem = [
+        <?php
+            foreach ($tags as $item) {
+                echo '{value: "'.$item->NAMA_TAG.'", id: "'.$item->ID_TAG.'"},';
+            }	
+        ?>
+    ]
+    let tagEdit, reminderEdit;
+    $(document).ready(function(){
+        var tags1 = document.querySelector("#kt_tagify_1");
+        new Tagify(tags1, {
+            whitelist: [
+                {value: "5 minutes ahead", reminder: "-5 minute"},
+                {value: "30 minutes ahead", reminder: "-30 minute"},
+                {value: "1 hour ahead", reminder: "-1 hour"},
+                {value: "1 day ahead", reminder: "-1 day"}
+            ],
+            maxTags: 10,
+            dropdown: {
+                maxItems: 20, // <- mixumum allowed rendered suggestions
+                classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+                enabled: 0, // <- show suggestions on focus
+                closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected
+            }
+        });
+
+        var tags2 = document.querySelector('#kt_tagify_2');
+        new Tagify(tags2, {
+            whitelist: tagsItem,
+            maxTags: 10,
+            dropdown: {
+                maxItems: 20, // <- mixumum allowed rendered suggestions
+                classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+                enabled: 0, // <- show suggestions on focus
+                closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
+            }
+        });
+
+        var tags3 = document.querySelector("#kt_tagify_3");
+            reminderEdit = new Tagify(tags3, {
+            whitelist: [
+                {value: "5 minutes ahead", reminder: "-5 minute"},
+                {value: "30 minutes ahead", reminder: "-30 minute"},
+                {value: "1 hour ahead", reminder: "-1 hour"},
+                {value: "1 day ahead", reminder: "-1 day"}
+            ],
+            maxTags: 10,
+            dropdown: {
+                maxItems: 20, // <- mixumum allowed rendered suggestions
+                classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+                enabled: 0, // <- show suggestions on focus
+                closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected
+            }
+        });
+
+        var tags4 = document.querySelector('#kt_tagify_4');
+            tagEdit = new Tagify(tags4, {
+                whitelist: tagsItem,
+                maxTags: 10,
+                dropdown: {
+                    maxItems: 20, // <- mixumum allowed rendered suggestions
+                    classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+                    enabled: 0, // <- show suggestions on focus
+                    closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
+                }
+            });
+
+        $("#kt_datepicker_3").flatpickr({
+            enableTime: true,
+            dateFormat: "j F Y, H:i",
+            time_24hr: true,
+            // defaultDate: "today"
+        });]
+    })
     const getFullMonth = month => {
         switch (month) {
             case 0:
