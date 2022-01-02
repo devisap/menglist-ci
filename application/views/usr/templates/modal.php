@@ -274,7 +274,7 @@
                     <!--begin::Actions-->
                     <div class="text-center">
                         <button type="reset" id="" class="btn btn-secondary me-3" data-bs-dismiss="modal">Cancel</button>
-                        <button type="reset" id="" class="btn btn-danger me-3" data-bs-dismiss="modal">Delete</button>
+                        <button type="reset" onclick="deleteTask()" id="" class="btn btn-danger me-3">Delete</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
@@ -284,6 +284,9 @@
                         <input type="hidden" id="mdlEdit_id" name="ID_TASK">
                     </div>
                     <!--end::Actions-->
+                </form>
+                <form id="frmDelete" action="<?= site_url('task/destroy')?>" method="post">
+                    <input type="hidden" name="ID_TASK" id="mdlDelete_id">
                 </form>
                 <!--end:Form-->
             </div>

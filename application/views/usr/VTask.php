@@ -257,6 +257,7 @@
 						$('#mdlEdit_desc').html(res['TASK']['DESKRIPSI_TASK']);
 						$('#mdlEdit_prior').val(res['TASK']['PRIORITAS_TASK']).change();
 						$('#mdlEdit_folder').val(res['TASK']['ID_FOLDER']).change();
+						$('#mdlDelete_id').val(res['TASK']['ID_TASK']);
 						$("#kt_datepicker_4").flatpickr({
 							enableTime: true,
 							time_24hr: true,
@@ -294,5 +295,8 @@
 						}
 					}
 				})
+			}
+			const deleteTask = () => {
+				$('#frmDelete').submit();
 			}
 		</script>

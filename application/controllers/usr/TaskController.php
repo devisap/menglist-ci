@@ -75,6 +75,14 @@ class TaskController extends CI_Controller{
         $this->session->set_flashdata('succ_msg', 'Successfully update a task');
         redirect('task');
     }
+    public function destroy(){
+        $this->Task->deleteTag(['ID_TASK' => $_POST['ID_TASK']]);
+        $this->Task->deleteReminder(['ID_TASK' => $_POST['ID_TASK']]);
+        $this->Task->delete(['ID_TASK' => $_POST['ID_TASK']]);
+        
+        $this->session->set_flashdata('succ_msg', 'Successfully delete task!');
+        redirect('task');
+    }
     public function changeStat(){
         $this->Task->update(['ID_TASK' => $_POST['id'], 'ISFINISHED_TASK' => $_POST['status']]);
         
