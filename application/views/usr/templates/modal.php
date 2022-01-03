@@ -696,7 +696,7 @@
             dateFormat: "j F Y, H:i",
             time_24hr: true,
             // defaultDate: "today"
-        });]
+        });
     })
     const getFullMonth = month => {
         switch (month) {
