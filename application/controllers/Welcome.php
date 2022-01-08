@@ -71,7 +71,7 @@ class Welcome extends CI_Controller {
 	public function DaftarTransaksi()
 	{
 		$data['title']      = "Daftar Transaksi";
-		$this->templateadmin->admin('admin/VTransaksi', $data);
+		$this->template->admin('admin/VTransaksi', $data);
 	}
 
 }

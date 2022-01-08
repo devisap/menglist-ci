@@ -14,4 +14,12 @@ class Template {
         $this->_ci->load->view('usr/templates/footer', $data); // Footer
     }
 
+    public function admin($content, $data){
+        $this->_ci->load->view('admin/templates/header', $data); // Header
+        $this->_ci->load->view('admin/templates/sidebar', $data); // Sidebar
+        $this->_ci->load->view($content, $data); // Content
+        $this->_ci->load->view('admin/templates/modal', $data); // Footer
+        $this->_ci->load->view('admin/templates/footer', $data); // Footer
+    }
+
 }

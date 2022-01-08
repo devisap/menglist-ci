@@ -87,3 +87,6 @@ $route['statistic'] = 'usr/StatisticController';
 
 //SIDE ADMIN
 $route['user']  = 'admin/UserController/vDaftarUser';
+
+//PREMIUM
+$route['premium']  = 'PremiumController';
