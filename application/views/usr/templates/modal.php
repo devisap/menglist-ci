@@ -340,28 +340,22 @@
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="">Choose color</span>
-                            <!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i> -->
-                        </label>
                         <!--end::Label-->
-                        <div class="row">
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #1abc9c;"></div>
-                            </div>
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #2ecc71;"></div>
-                            </div>
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #3498db;"></div>
-                            </div>
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #9b59b6;"></div>
-                            </div>
-                            <div class="col">
-                                <div style="border-radius: 100px;width: 35px;height: 35px;background: #9b59b6;"></div>
-                            </div>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-bold mb-2">Choose a color</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Priority" name="WARNA_TAG">
+                                <option value="1">Default</option>
+                                <option value="2">Blue</option>
+                                <!-- <option value="3">Gray</option> -->
+                                <option value="4">Green</option>
+                                <option value="5">Magenta</option>
+                                <option value="6">Yellow</option>
+                                <option value="7">Red</option>
+                                <option value="8">Dark</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+
                         </div>
                     </div>
                     <!--end::Input group-->
@@ -471,175 +465,262 @@
 </div>
 <!--end::Modal - New Target-->
 
-    <!--begin::Modal - New Target-->
-    <div class="modal hide fade" id="mdl_premCalendar">
-        <!--begin::Modal dialog-->
-        <div class="modal-dialog modal-dialog-centered mw-600px">
-            <!--begin::Modal content-->
-            <div class="modal-content rounded">
-                <!--begin::Modal body-->
-                <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
-                    <!--begin:Form-->
-                    <!--begin::Heading-->
-                    <div class="mb-13"></div>
-                    <!--end::Heading-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <img src="<?= base_url()?>assets/media/portfolio/calendar.png" alt="Premium">
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Actions-->
-                    <div class="text-center mt-10">
-                        <h2 class="text-center">Calendar View</h2>
-                        <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
-                        <button type="submit" id="" class="btn btn-primary">
-                            <span class="indicator-label">Upgrade Now</span>
-                            <span class="indicator-progress">Please wait...
-                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                        </button>
-                    </div>
-                    <!--end::Actions-->
-                    <!--end:Form-->
+<!--begin::Modal Premium Calendar - New Target-->
+<div class="modal hide fade" id="mdl_premCalendar">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-600px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+                <!--begin::Heading-->
+                <div class="mb-13"></div>
+                <!--end::Heading-->
+                <!--begin::Input group-->
+                <div class="d-flex flex-column mb-8 fv-row">
+                    <img src="<?= base_url() ?>assets/media/portfolio/calendar.png" alt="Premium">
                 </div>
-                <!--end::Modal body-->
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="text-center mt-10">
+                    <h2 class="text-center">Calendar View</h2>
+                    <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
+                    <button type="submit" id="" class="btn btn-primary">
+                        <span class="indicator-label">Upgrade Now</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                </div>
+                <!--end::Actions-->
+                <!--end:Form-->
             </div>
-            <!--end::Modal content-->
+            <!--end::Modal body-->
         </div>
-        <!--end::Modal dialog-->
+        <!--end::Modal content-->
     </div>
-    <!--end::Modal - New Target-->
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Target-->
 
-        <!--begin::Modal - New Target-->
-        <div class="modal hide fade" id="mdl_premCalendar">
-        <!--begin::Modal dialog-->
-        <div class="modal-dialog modal-dialog-centered mw-600px">
-            <!--begin::Modal content-->
-            <div class="modal-content rounded">
-                <!--begin::Modal body-->
-                <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
-                    <!--begin:Form-->
-                    <!--begin::Heading-->
-                    <div class="mb-13"></div>
-                    <!--end::Heading-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <img src="<?= base_url()?>assets/media/portfolio/calendar.png" alt="Premium">
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Actions-->
-                    <div class="text-center mt-10">
-                        <h2 class="text-center">Statistic View</h2>
-                        <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
-                        <button type="submit" id="" class="btn btn-primary">
-                            <span class="indicator-label">Upgrade Now</span>
-                            <span class="indicator-progress">Please wait...
-                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                        </button>
-                    </div>
-                    <!--end::Actions-->
-                    <!--end:Form-->
+<!--begin::Modal Statistik - New Target-->
+<div class="modal hide fade" id="mdl_premStatistic">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-600px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+                <!--begin::Heading-->
+                <div class="mb-13"></div>
+                <!--end::Heading-->
+                <!--begin::Input group-->
+                <div class="d-flex flex-column mb-8 fv-row">
+                    <img src="<?= base_url() ?>assets/media/portfolio/statistic.png" alt="Premium">
                 </div>
-                <!--end::Modal body-->
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="text-center mt-10">
+                    <h2 class="text-center">Statistic View</h2>
+                    <label class="text-center fw-bold mb-4">To see your statistics, please upgrade to create unlimited text. Please upgrade premium by pressing the upgrade button below.</label>
+                    <button type="submit" id="" class="btn btn-primary">
+                        <span class="indicator-label">Upgrade Now</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                </div>
+                <!--end::Actions-->
+                <!--end:Form-->
             </div>
-            <!--end::Modal content-->
+            <!--end::Modal body-->
         </div>
-        <!--end::Modal dialog-->
+        <!--end::Modal content-->
     </div>
-    <!--end::Modal - New Target-->
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Target-->
 
-    <!--begin::Modal - New Target-->
-        <div class="modal hide fade" id="mdl_premStatistic">
-        <!--begin::Modal dialog-->
-        <div class="modal-dialog modal-dialog-centered mw-600px">
-            <!--begin::Modal content-->
-            <div class="modal-content rounded">
-                <!--begin::Modal body-->
-                <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
-                    <!--begin:Form-->
-                    <!--begin::Heading-->
-                    <div class="mb-13"></div>
-                    <!--end::Heading-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <img src="<?= base_url()?>assets/media/portfolio/statistic.png" alt="Premium">
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Actions-->
-                    <div class="text-center mt-10">
-                        <h2 class="text-center">Statistic View</h2>
-                        <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
-                        <button type="submit" id="" class="btn btn-primary">
-                            <span class="indicator-label">Upgrade Now</span>
-                            <span class="indicator-progress">Please wait...
-                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                        </button>
-                    </div>
-                    <!--end::Actions-->
-                    <!--end:Form-->
+<!--begin::Modal Task Premium- New Target-->
+<div class="modal hide fade" id="mdl_premTask">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-600px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+                <!--begin::Heading-->
+                <div class="mb-13"></div>
+                <!--end::Heading-->
+                <!--begin::Input group-->
+                <div class="d-flex flex-column mb-8 fv-row">
+                    <img src="<?= base_url() ?>assets/media/portfolio/task.png" alt="Premium">
                 </div>
-                <!--end::Modal body-->
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="text-center mt-10">
+                    <h2 class="text-center">Task View</h2>
+                    <label class="text-center fw-bold mb-4">The task has reached the maximum usage limit, please upgrade to the premium to create unlimited tasks. Please do a premium upgrade by pressing the upgrade button below.</label>
+                    <button type="submit" id="" class="btn btn-primary">
+                        <span class="indicator-label">Upgrade Now</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                </div>
+                <!--end::Actions-->
+                <!--end:Form-->
             </div>
-            <!--end::Modal content-->
+            <!--end::Modal body-->
         </div>
-        <!--end::Modal dialog-->
+        <!--end::Modal content-->
     </div>
-    <!--end::Modal - New Target-->
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Target-->
 
-     <!--begin::Modal - New Target-->
-     <div class="modal hide fade" id="mdl_premTask">
-        <!--begin::Modal dialog-->
-        <div class="modal-dialog modal-dialog-centered mw-600px">
-            <!--begin::Modal content-->
-            <div class="modal-content rounded">
-                <!--begin::Modal body-->
-                <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
-                    <!--begin:Form-->
-                    <!--begin::Heading-->
-                    <div class="mb-13"></div>
-                    <!--end::Heading-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <img src="<?= base_url()?>assets/media/portfolio/task.png" alt="Premium">
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Actions-->
-                    <div class="text-center mt-10">
-                        <h2 class="text-center">Task View</h2>
-                        <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
-                        <button type="submit" id="" class="btn btn-primary">
-                            <span class="indicator-label">Upgrade Now</span>
-                            <span class="indicator-progress">Please wait...
-                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                        </button>
-                    </div>
-                    <!--end::Actions-->
-                    <!--end:Form-->
+<!--begin::Modal Tags - New Target-->
+<div class="modal hide fade" id="mdl_premTags">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-600px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+                <!--begin::Heading-->
+                <div class="mb-13"></div>
+                <!--end::Heading-->
+                <!--begin::Input group-->
+                <div class="d-flex flex-column mb-8 fv-row">
+                    <img src="<?= base_url() ?>assets/media/portfolio/tags.png" alt="Premium">
                 </div>
-                <!--end::Modal body-->
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="text-center mt-10">
+                    <h2 class="text-center">Tags View</h2>
+                    <label class="text-center fw-bold mb-4">Your tags have reached the maximum usage limit, please upgrade to premium to create unlimited tags. Please upgrade premium by pressing the upgrade button below.</label>
+                    <button type="submit" id="" class="btn btn-primary">
+                        <span class="indicator-label">Upgrade Now</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                </div>
+                <!--end::Actions-->
+                <!--end:Form-->
             </div>
-            <!--end::Modal content-->
+            <!--end::Modal body-->
         </div>
-        <!--end::Modal dialog-->
+        <!--end::Modal content-->
     </div>
-    <!--end::Modal - New Target-->
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Target-->
+
+<!--begin::Modal Folder - New Target-->
+<div class="modal hide fade" id="mdl_premFolder">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-600px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+                <!--begin::Heading-->
+                <div class="mb-13"></div>
+                <!--end::Heading-->
+                <!--begin::Input group-->
+                <div class="d-flex flex-column mb-8 fv-row">
+                    <img src="<?= base_url() ?>assets/media/portfolio/folder.png" alt="Premium">
+                </div>
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="text-center mt-10">
+                    <h2 class="text-center">Folder View</h2>
+                    <label class="text-center fw-bold mb-4">Your folder has reached the maximum usage limit, please upgrade to create unlimited folders. Please upgrade premium by pressing the upgrade button below.</label>
+                    <button type="submit" id="" class="btn btn-primary">
+                        <span class="indicator-label">Upgrade Now</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                </div>
+                <!--end::Actions-->
+                <!--end:Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Target-->
+
+<!--begin::Modal Multiple Reminder - New Target-->
+<div class="modal hide fade" id="mdl_premMultipleReminder">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-600px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+                <!--begin::Heading-->
+                <div class="mb-13"></div>
+                <!--end::Heading-->
+                <!--begin::Input group-->
+                <div class="d-flex flex-column mb-8 fv-row">
+                    <img src="<?= base_url() ?>assets/media/portfolio/task.png" alt="Premium">
+                </div>
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="text-center mt-10">
+                    <h2 class="text-center">Multiple Reminder View</h2>
+                    <label class="text-center fw-bold mb-4">task reminder has reached the maximum usage limit, please upgrade premium to make more task reminders. Please do a premium upgrade by pressing the upgrade button below.</label>
+                    <button type="submit" id="" class="btn btn-primary">
+                        <span class="indicator-label">Upgrade Now</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                </div>
+                <!--end::Actions-->
+                <!--end:Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Target-->
 
 <script>
     let tagsItem = [
         <?php
-            foreach ($tags as $item) {
-                echo '{value: "'.$item->NAMA_TAG.'", id: "'.$item->ID_TAG.'"},';
-            }	
+        foreach ($tags as $item) {
+            echo '{value: "' . $item->NAMA_TAG . '", id: "' . $item->ID_TAG . '"},';
+        }
         ?>
     ]
     let tagEdit, reminderEdit;
-    $(document).ready(function(){
+    $(document).ready(function() {
         var tags1 = document.querySelector("#kt_tagify_1");
         new Tagify(tags1, {
-            whitelist: [
-                {value: "5 minutes ahead", reminder: "-5 minute"},
-                {value: "30 minutes ahead", reminder: "-30 minute"},
-                {value: "1 hour ahead", reminder: "-1 hour"},
-                {value: "1 day ahead", reminder: "-1 day"}
+            whitelist: [{
+                    value: "5 minutes ahead",
+                    reminder: "-5 minute"
+                },
+                {
+                    value: "30 minutes ahead",
+                    reminder: "-30 minute"
+                },
+                {
+                    value: "1 hour ahead",
+                    reminder: "-1 hour"
+                },
+                {
+                    value: "1 day ahead",
+                    reminder: "-1 day"
+                }
             ],
             maxTags: 10,
             dropdown: {
@@ -663,12 +744,23 @@
         });
 
         var tags3 = document.querySelector("#kt_tagify_3");
-            reminderEdit = new Tagify(tags3, {
-            whitelist: [
-                {value: "5 minutes ahead", reminder: "-5 minute"},
-                {value: "30 minutes ahead", reminder: "-30 minute"},
-                {value: "1 hour ahead", reminder: "-1 hour"},
-                {value: "1 day ahead", reminder: "-1 day"}
+        reminderEdit = new Tagify(tags3, {
+            whitelist: [{
+                    value: "5 minutes ahead",
+                    reminder: "-5 minute"
+                },
+                {
+                    value: "30 minutes ahead",
+                    reminder: "-30 minute"
+                },
+                {
+                    value: "1 hour ahead",
+                    reminder: "-1 hour"
+                },
+                {
+                    value: "1 day ahead",
+                    reminder: "-1 day"
+                }
             ],
             maxTags: 10,
             dropdown: {
@@ -680,23 +772,23 @@
         });
 
         var tags4 = document.querySelector('#kt_tagify_4');
-            tagEdit = new Tagify(tags4, {
-                whitelist: tagsItem,
-                maxTags: 10,
-                dropdown: {
-                    maxItems: 20, // <- mixumum allowed rendered suggestions
-                    classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
-                    enabled: 0, // <- show suggestions on focus
-                    closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
-                }
-            });
+        tagEdit = new Tagify(tags4, {
+            whitelist: tagsItem,
+            maxTags: 10,
+            dropdown: {
+                maxItems: 20, // <- mixumum allowed rendered suggestions
+                classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
+                enabled: 0, // <- show suggestions on focus
+                closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
+            }
+        });
 
         $("#kt_datepicker_3").flatpickr({
             enableTime: true,
             dateFormat: "j F Y, H:i",
             time_24hr: true,
             // defaultDate: "today"
-        });]
+        });
     })
     const getFullMonth = month => {
         switch (month) {
@@ -741,4 +833,3 @@
         }
     }
 </script>
-

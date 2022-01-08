@@ -11,7 +11,7 @@ class UserController extends CI_Controller{
         $data['title']      = "Daftar User";
         $data['user']      = $dataUser;
 
-		$this->templateadmin->admin('admin/VUser', $data);
+		$this->template->admin('admin/VUser', $data);
     }
     
 }
