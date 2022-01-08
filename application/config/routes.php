@@ -90,3 +90,6 @@ $route['user']  = 'admin/UserController/vDaftarUser';
 
 // ======= CRONJOB =======
 $route['cronjob/reminder-task'] = 'CronjobController/reminderTask';
+
+//PREMIUM
+$route['premium']  = 'PremiumController';
