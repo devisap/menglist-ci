@@ -102,7 +102,7 @@
                             <!--end::Menu wrapper-->
                             <!--begin::Toolbar-->
                             <div class="flex-equal text-end ms-1">
-                                <a href="<?php echo site_url('sign-in'); ?>" class="btn btn-success">Sign In</a>
+                                
                             </div>
                             <!--end::Toolbar-->
                         </div>
@@ -124,7 +124,23 @@
                         <h1 class="text-white lh-base fw-bolder fs-1x fs-md-1x mb-15">Unlock all the advanced features. Enjoy your organized life to the fullest.</h1>
                         <!--end::Title-->
                         <!--begin::Action-->
-                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdl_premium">Upgrade Now </a>
+                        <?php
+                            if($this->session->userdata('is_logged')){
+                                if($this->session->userdata('is_premium') == "1"){
+                                    echo '
+                                        <button type="button" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdl_premium">You have made a premium upgrade request </button>
+                                    ';
+                                }else{
+                                    echo '
+                                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdl_premium">Upgrade Premium</a>
+                                    ';
+                                }
+                            }else{
+                                echo '
+                                    <a href="'.site_url('sign-in').'" class="btn btn-success">Sign In</a>
+                                ';
+                            }
+                        ?>
                         <!--end::Action-->
                     </div>
                     <!--end::Heading-->
@@ -166,6 +182,8 @@
                     <!--begin::Modal header-->
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-x px-10 px-lg-15 pt-0 pb-15">
+                    <form action="<?= site_url('premium/store')?>" method="post" enctype="multipart/form-data">
+
                         <!--begin:Form-->
 
                         <!--begin::Heading-->
@@ -201,27 +219,7 @@
                             <div class="fv-row mb-8">
                                 <label class="fs-6 fw-bold mb-2">Attachments</label>
                                 <!--begin::Dropzone-->
-                                <div class="dropzone" id="kt_modal_create_ticket_attachments">
-                                    <!--begin::Message-->
-                                    <div class="dz-message needsclick align-items-center">
-                                        <!--begin::Icon-->
-                                        <!--begin::Svg Icon | path: icons/duotune/files/fil010.svg-->
-                                        <span class="svg-icon svg-icon-3hx svg-icon-primary">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 12.6L12.7 9.3C12.3 8.9 11.7 8.9 11.3 9.3L8 12.6H11V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18V12.6H16Z" fill="black" />
-                                                <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black" />
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->
-                                        <!--end::Icon-->
-                                        <!--begin::Info-->
-                                        <div class="ms-4">
-                                            <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Drop files here or click to upload.</h3>
-                                            <span class="fw-bold fs-7 text-gray-400">Upload up to 10 files</span>
-                                        </div>
-                                        <!--end::Info-->
-                                    </div>
-                                </div>
+                                <input type="file" accept=".jpg, .png, .jpeg" name="bukti" id="">
                                 <!--end::Dropzone-->
                             </div>
                             <!--end::Input group-->
@@ -230,6 +228,7 @@
                                 <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>
+                    </form>
                         </div>
                         <!--end::Actions-->
                         <!--end:Form-->

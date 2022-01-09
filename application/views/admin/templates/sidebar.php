@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('Welcome/DaftarTransaksi'); ?>">
+                    <a class="menu-link" href="<?php echo site_url('admin/transaction'); ?>">
                         <span class="menu-icon">
                             <img alt="Logo" src="<?= base_url()?>assets/media/icons/transaksi.png" class="h-20px logo" />
                             </span>
