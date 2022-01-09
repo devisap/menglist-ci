@@ -12,9 +12,9 @@
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-	<meta property="og:url" content="https://keenthemes.com/metronic" />
-	<meta property="og:site_name" content="Keenthemes | Metronic" />
-	<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+	<meta property="og:url" content="https://menglist.bgskr-project.my.id/" />
+	<meta property="og:site_name" content="Menglist | Task Management" />
+	<link rel="canonical" href="https://menglist.bgskr-project.my.id/" />
 	<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	<!--begin::Fonts-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -56,7 +56,7 @@
 								<!--end::Mobile menu toggle-->
 								<!--begin::Logo image-->
 								<a href="<?php echo site_url('welcome'); ?>">
-									<img alt="Logo" src="assets/media/logos/logo.png" class="logo-default h-25px h-lg-30px" />
+									<img alt="Logo" src="assets/media/logos/favicon.ico" class="logo-default h-25px h-lg-30px" />
 									<!-- <img alt="Logo" src="assets/media/logos/logo-landing-dark.svg" class="logo-sticky h-20px h-lg-25px" /> -->
 								</a>
 								<!--end::Logo image-->
@@ -78,13 +78,6 @@
 										<div class="menu-item">
 											<!--begin::Menu link-->
 											<a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#how-it-works" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">How it Works</a>
-											<!--end::Menu link-->
-										</div>
-										<!--end::Menu item-->
-										<!--begin::Menu item-->
-										<div class="menu-item">
-											<!--begin::Menu link-->
-											<a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#achievements" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Achievements</a>
 											<!--end::Menu link-->
 										</div>
 										<!--end::Menu item-->
@@ -252,17 +245,17 @@
 						<!--end::Item-->
 						<!--begin::Item-->
 						<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-							<img src="assets/media/portfolio/demo1.png" class="card-rounded shadow mw-100" alt="" />
+							<img src="assets/media/portfolio/demo2.png" class="card-rounded shadow mw-100" alt="" />
 						</div>
 						<!--end::Item-->
 						<!--begin::Item-->
 						<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-							<img src="assets/media/portfolio/demo1.png" class="card-rounded shadow mw-100" alt="" />
+							<img src="assets/media/portfolio/demo3.png" class="card-rounded shadow mw-100" alt="" />
 						</div>
 						<!--end::Item-->
 						<!--begin::Item-->
 						<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-							<img src="assets/media/portfolio/demo1.png" class="card-rounded shadow mw-100" alt="" />
+							<img src="assets/media/portfolio/demo4.png" class="card-rounded shadow mw-100" alt="" />
 						</div>
 						<!--end::Item-->
 					</div>
@@ -313,8 +306,8 @@
 						<!--begin::Heading-->
 						<div class="mb-13 text-center">
 							<h1 class="fs-2hx fw-bolder text-white mb-5" id="pricing" data-kt-scroll-offset="{default: 100, lg: 150}">Clear Pricing Makes it Easy</h1>
-							<div class="text-gray-600 fw-bold fs-5">Save thousands to millions of bucks by using single tool for different
-								<br />amazing and outstanding cool and great useful admin
+							<div class="text-gray-600 fw-bold fs-5">Save thousands to millions of bucks by using single tool for task management
+								<br />manage your task manage your life
 							</div>
 						</div>
 						<!--end::Heading-->
@@ -327,7 +320,7 @@
 							</div>
 							<!--end::Nav group-->
 							<!--begin::Row-->
-							<div class="row g-10">
+							<div class="row g-10 justify-content-center">
 								<!--begin::Col-->
 								<div class="col-xl-4">
 									<div class="d-flex h-100 align-items-center">
@@ -344,7 +337,7 @@
 												<!--begin::Price-->
 												<div class="text-center">
 													<span class="mb-2 text-primary">$</span>
-													<span class="fs-3x fw-bolder text-primary" data-kt-plan-price-month="99" data-kt-plan-price-annual="999">99</span>
+													<span class="fs-3x fw-bolder text-primary" data-kt-plan-price-month="1.9" data-kt-plan-price-annual="1.65">1.9</span>
 													<span class="fs-7 fw-bold opacity-50" data-kt-plan-price-month="Mon" data-kt-plan-price-annual="Ann">/ Mon</span>
 												</div>
 												<!--end::Price-->
@@ -354,7 +347,7 @@
 											<div class="w-100 mb-10">
 												<!--begin::Item-->
 												<div class="d-flex flex-stack mb-5">
-													<span class="fw-bold fs-6 text-gray-800 text-start pe-3">Up to 10 Active Users</span>
+													<span class="fw-bold fs-6 text-gray-800 text-start pe-3">Creating Tasks, Tags, and Folders</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-success">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -367,7 +360,7 @@
 												<!--end::Item-->
 												<!--begin::Item-->
 												<div class="d-flex flex-stack mb-5">
-													<span class="fw-bold fs-6 text-gray-800 text-start pe-3">Up to 30 Project Integrations</span>
+													<span class="fw-bold fs-6 text-gray-800 text-start pe-3">Task Reminder</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-success">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -380,7 +373,7 @@
 												<!--end::Item-->
 												<!--begin::Item-->
 												<div class="d-flex flex-stack mb-5">
-													<span class="fw-bold fs-6 text-gray-800">Keen Analytics Platform</span>
+													<span class="fw-bold fs-6 text-gray-800">Unlimited Tags</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen040.svg-->
 													<span class="svg-icon svg-icon-1">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -394,7 +387,21 @@
 												<!--end::Item-->
 												<!--begin::Item-->
 												<div class="d-flex flex-stack mb-5">
-													<span class="fw-bold fs-6 text-gray-800">Targets Timelines &amp; Files</span>
+													<span class="fw-bold fs-6 text-gray-800">Unlimited Folder</span>
+													<!--begin::Svg Icon | path: icons/duotune/general/gen040.svg-->
+													<span class="svg-icon svg-icon-1">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+															<rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="black" />
+															<rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="black" />
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+												</div>
+												<!--end::Item-->
+												<!--begin::Item-->
+												<div class="d-flex flex-stack mb-5">
+													<span class="fw-bold fs-6 text-gray-800">Multiple Reminder Task</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen040.svg-->
 													<span class="svg-icon svg-icon-1">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -408,7 +415,7 @@
 												<!--end::Item-->
 												<!--begin::Item-->
 												<div class="d-flex flex-stack">
-													<span class="fw-bold fs-6 text-gray-800">Unlimited Projects</span>
+													<span class="fw-bold fs-6 text-gray-800">View Calendar &amp; Statistics</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen040.svg-->
 													<span class="svg-icon svg-icon-1">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -423,7 +430,7 @@
 											</div>
 											<!--end::Features-->
 											<!--begin::Select-->
-											<a href="#" class="btn btn-primary">Select</a>
+											<a href="<?php echo site_url('premium'); ?>" class="btn btn-primary">Select</a>
 											<!--end::Select-->
 										</div>
 										<!--end::Option-->
@@ -438,7 +445,7 @@
 											<!--begin::Heading-->
 											<div class="mb-7 text-center">
 												<!--begin::Title-->
-												<h1 class="text-white mb-5 fw-boldest">Business</h1>
+												<h1 class="text-white mb-5 fw-boldest">Premium</h1>
 												<!--end::Title-->
 												<!--begin::Description-->
 												<div class="text-white opacity-75 fw-bold mb-5">Best Settings for Business</div>
@@ -446,7 +453,7 @@
 												<!--begin::Price-->
 												<div class="text-center">
 													<span class="mb-2 text-white">$</span>
-													<span class="fs-3x fw-bolder text-white" data-kt-plan-price-month="199" data-kt-plan-price-annual="1999">199</span>
+													<span class="fs-3x fw-bolder text-white" data-kt-plan-price-month="1.9" data-kt-plan-price-annual="19.9">19.9</span>
 													<span class="fs-7 fw-bold text-white opacity-75" data-kt-plan-price-month="Mon" data-kt-plan-price-annual="Ann">/ Mon</span>
 												</div>
 												<!--end::Price-->
@@ -456,7 +463,7 @@
 											<div class="w-100 mb-10">
 												<!--begin::Item-->
 												<div class="d-flex flex-stack mb-5">
-													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">Up to 10 Active Users</span>
+													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">Creating Tasks, Tags, and Folders</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-white">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -469,7 +476,7 @@
 												<!--end::Item-->
 												<!--begin::Item-->
 												<div class="d-flex flex-stack mb-5">
-													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">Up to 30 Project Integrations</span>
+													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">Task Reminder</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-white">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -482,7 +489,7 @@
 												<!--end::Item-->
 												<!--begin::Item-->
 												<div class="d-flex flex-stack mb-5">
-													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">Keen Analytics Platform</span>
+													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">Unlimited Tags</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-white">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -495,8 +502,21 @@
 												<!--end::Item-->
 												<!--begin::Item-->
 												<div class="d-flex flex-stack mb-5">
-													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">Targets Timelines &amp; Files</span>
+													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">Unlimited Folder</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
+													<span class="svg-icon svg-icon-1 svg-icon-white">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+															<path d="M10.4343 12.4343L8.75 10.75C8.33579 10.3358 7.66421 10.3358 7.25 10.75C6.83579 11.1642 6.83579 11.8358 7.25 12.25L10.2929 15.2929C10.6834 15.6834 11.3166 15.6834 11.7071 15.2929L17.25 9.75C17.6642 9.33579 17.6642 8.66421 17.25 8.25C16.8358 7.83579 16.1642 7.83579 15.75 8.25L11.5657 12.4343C11.2533 12.7467 10.7467 12.7467 10.4343 12.4343Z" fill="black" />
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+												</div>
+												<!--end::Item-->
+												<!--begin::Item-->
+												<div class="d-flex flex-stack mb-5">
+													<span class="ffw-bold fs-6 text-white opacity-75 text-start pe-3">Multiple Reminder Task</span>
+													<!--begin::Svg Icon | path: icons/duotune/general/gen040.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-white">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
@@ -508,13 +528,12 @@
 												<!--end::Item-->
 												<!--begin::Item-->
 												<div class="d-flex flex-stack">
-													<span class="fw-bold fs-6 text-white opacity-75">Unlimited Projects</span>
-													<!--begin::Svg Icon | path: icons/duotune/general/gen040.svg-->
+													<span class="fw-bold fs-6 text-white opacity-75 text-start pe-3">View Calendar &amp; Statistics</span>
+													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-white">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
-															<rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="black" />
-															<rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="black" />
+															<path d="M10.4343 12.4343L8.75 10.75C8.33579 10.3358 7.66421 10.3358 7.25 10.75C6.83579 11.1642 6.83579 11.8358 7.25 12.25L10.2929 15.2929C10.6834 15.6834 11.3166 15.6834 11.7071 15.2929L17.25 9.75C17.6642 9.33579 17.6642 8.66421 17.25 8.25C16.8358 7.83579 16.1642 7.83579 15.75 8.25L11.5657 12.4343C11.2533 12.7467 10.7467 12.7467 10.4343 12.4343Z" fill="black" />
 														</svg>
 													</span>
 													<!--end::Svg Icon-->
@@ -523,7 +542,7 @@
 											</div>
 											<!--end::Features-->
 											<!--begin::Select-->
-											<a href="#" class="btn btn-color-primary btn-active-light-primary btn-light">Select</a>
+											<a href="<?php echo site_url('premium'); ?>" class="btn btn-color-primary btn-active-light-primary btn-light">Select</a>
 											<!--end::Select-->
 										</div>
 										<!--end::Option-->
@@ -603,17 +622,6 @@
 								<!--begin::Text-->
 								<span class="fw-normal fs-4 text-gray-700">Email us to
 									<a href="<?php echo site_url('welcome'); ?>" class="text-white opacity-50 text-hover-primary">menglist@gmail.com</a></span>
-								<!--end::Text-->
-							</div>
-							<!--end::Block-->
-							<!--begin::Block-->
-							<div class="rounded landing-dark-border p-9">
-								<!--begin::Title-->
-								<h2 class="text-white">How About a Custom Project?</h2>
-								<!--end::Title-->
-								<!--begin::Text-->
-								<span class="fw-normal fs-4 text-gray-700">Use Our Custom Development Service.
-									<a href="<?php echo site_url('welcome'); ?>" class="text-white opacity-50 text-hover-primary">Click to Get a Quote</a></span>
 								<!--end::Text-->
 							</div>
 							<!--end::Block-->
@@ -704,11 +712,11 @@
 						<div class="d-flex align-items-center order-2 order-md-1">
 							<!--begin::Logo-->
 							<a href="<?php echo site_url('welcome'); ?>">
-								<img alt="Logo" src="assets/media/logos/logo.png" class="h-15px h-md-20px" />
+								<img alt="Logo" src="assets/media/logos/favicon.ico" class="h-15px h-md-20px" />
 							</a>
 							<!--end::Logo image-->
 							<!--begin::Logo image-->
-							<span class="mx-5 fs-6 fw-bold text-gray-600 pt-1" href="<?php echo site_url('welcome'); ?>">© 2021 Keenthemes Inc.</span>
+							<span class="mx-5 fs-6 fw-bold text-gray-600 pt-1" href="<?php echo site_url('welcome'); ?>">© 2022 Menglist</span>
 							<!--end::Logo image-->
 						</div>
 						<!--end::Copyright-->
