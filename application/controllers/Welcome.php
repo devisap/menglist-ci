@@ -74,4 +74,13 @@ class Welcome extends CI_Controller {
 		$this->template->admin('admin/VTransaksi', $data);
 	}
 
+	public function emailReminder()
+	{
+		$this->load->view('VEmailReminder');
+	}
+	public function confirmUpgrade()
+	{
+		$this->load->view('VConfirmUpgrade');
+	}
+
 }
