@@ -169,33 +169,9 @@
 						<!--begin::Row-->
 						<div class="row gy-5 g-xl-10">
 							<!--begin::Col-->
-							<div class="col-xl-6">
-								<!--begin::Mixed Widget 13-->
-								<div class="card card-xl-stretch mb-xl-10 border" style="background-color: #FFF">
-									<!--begin::Body-->
-									<div class="card-body d-flex flex-column">
-										<!--begin::Wrapper-->
-										<div class="d-flex flex-column flex-grow-1">
-											<!--begin::Title-->
-											<a href="#" class="text-dark text-hover-primary fw-bolder fs-3">Overview</a>
-											<!--end::Title-->
-										</div>
-										<!--end::Wrapper-->
-										<!--begin::Stats-->
-										<div class="pt-2">
-											<!--begin::Number-->
-											<span class="text-dark fw-bolder fs-3x me-2 lh-0">10</span>
-											<!--end::Number-->
-										</div>
-										<!--end::Stats-->
-									</div>
-									<!--end::Body-->
-								</div>
-								<!--end::Mixed Widget 13-->
-							</div>
 							<!--end::Col-->
 							<!--begin::Col-->
-							<div class="col-xl-6">
+							<div class="col-xl-12">
 								<!--begin::Mixed Widget 14-->
 								<div class="card card-xxl-stretch mb-xl-10" style="background-color: #fff">
 									<!--begin::Body-->
@@ -230,11 +206,19 @@
 	</div>
 
 	<script>
+		let rate
+		<?php
+			if($completionRate == "0"){
+				echo 'rate = 100;';
+			}else{
+				echo 'rate = '.($completionRate - 100).";";
+			}
+		?>
 		var options = {
 			chart: {
 				type: 'donut'
 			},
-			series: [<?= $completionRate ?>, <?= ($completionRate - 100) ?>],
+			series: [<?= $completionRate ?>, rate],
 			labels: ['Completed', 'Not Yet'],
 			colors: ['#CBF0F4', '#F7D9E3']
 		}
