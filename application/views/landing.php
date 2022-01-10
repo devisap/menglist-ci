@@ -336,9 +336,8 @@
 												<!--end::Description-->
 												<!--begin::Price-->
 												<div class="text-center">
-													<span class="mb-2 text-primary">$</span>
-													<span class="fs-3x fw-bolder text-primary" data-kt-plan-price-month="1.9" data-kt-plan-price-annual="1.65">1.9</span>
-													<span class="fs-7 fw-bold opacity-50" data-kt-plan-price-month="Mon" data-kt-plan-price-annual="Ann">/ Mon</span>
+													<span class="fs-3x fw-bolder text-primary" data-kt-plan-price-month="Free" data-kt-plan-price-annual="Free">Free</span>
+													<!-- <span class="fs-7 fw-bold opacity-50" data-kt-plan-price-month="Mon" data-kt-plan-price-annual="Ann">/ Mon</span> -->
 												</div>
 												<!--end::Price-->
 											</div>
