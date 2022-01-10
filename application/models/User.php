@@ -28,4 +28,10 @@ class User extends CI_Model{
     public function delete($param){
         $this->db->delete('user', $param);
     }
+    public function upgradePremiumUser($emailUser)
+    {
+        $this->db->set('ISPREMIUM_USER', 1);
+        $this->db->where('EMAIL_USER', $emailUser);
+        return $this->db->update('user');
+    }
 }

@@ -28,4 +28,10 @@ class Transaction extends CI_Model{
     public function delete($param){
         $this->db->delete('transaction', $param);
     }
+    public function upgradePremium($Id_Transaction)
+    {
+        $this->db->set('STATUS_TRANSACTION', 1);
+        $this->db->where('ID_TRANSACTION', $Id_Transaction);
+        return $this->db->update('transaction');   
+    }
 }

@@ -90,6 +90,7 @@ $route['statistic'] = 'usr/StatisticController';
 //SIDE ADMIN
 $route['admin/user']  = 'admin/UserController/vDaftarUser';
 $route['admin/transaction']  = 'admin/TransactionController';
+$route['admin/transaction/(:any)']  = 'admin/TransactionController/aksiUpgradePremium/$1';
 
 // ======= CRONJOB =======
 $route['cronjob/reminder-task'] = 'CronjobController/reminderTask';
