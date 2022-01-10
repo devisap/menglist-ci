@@ -19,7 +19,9 @@ class FolderController extends CI_Controller{
     }
     public function store(){
         $this->Folder->insert($_POST);
-        redirect('folder/123');
+        $email = $this->session->userdata('email');
+        $Folder = $this->Folder->get(['EMAIL_USER' => $email, 'orderBy' => 'ID_FOLDER DESC']);
+        redirect('folder/'.$Folder[0]->ID_FOLDER);
     }
     public function getDataTask($idFolder){
         $currDate       = date('Y-m-d');
@@ -27,6 +29,10 @@ class FolderController extends CI_Controller{
             'HTMLTASK'          => $this->getTask($idFolder, $currDate),
             'HTMLCOMPLETEDS'    => $this->getCompleteds($idFolder)
         ]);
+    }
+    public function ajxGet(){
+        $folder           = $this->Folder->getById($_POST['id']);
+        echo json_encode(['FOLDER' => $folder]);
     }
     public function getTask($idFolder, $currDate){
         $tasks  = $this->Task->get(['ID_FOLDER' => $idFolder, 'orderBy' => 'TGL_TASK ASC', 'ISFINISHED_TASK' => '0']);

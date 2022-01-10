@@ -21,6 +21,7 @@ class Tag extends CI_Model{
     }
     public function insert($param){
         $this->db->insert('tag', $param);
+        return $this->db->insert_id();
     }
     public function update($param){
         $this->db->where('ID_TAG', $param['ID_TAG'])->update('tag', $param);

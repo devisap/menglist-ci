@@ -35,7 +35,7 @@ class PremiumController extends CI_Controller{
           return [
                   'status'=> true,
                   'msg'   => 'Data berhasil terupload',
-                  'link'  => base_url('uploads/event/'.$img['file_name'])
+                  'link'  => base_url('uploads/transaction/'.$img['file_name'])
               ];
       }else{
           return [
