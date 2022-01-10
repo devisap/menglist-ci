@@ -54,7 +54,7 @@
                                 $statusPremium = 'data-bs-toggle="modal" data-bs-target="#mdl_newFolder"';
                                 if($this->session->userdata('is_premium') == '0'){
                                     if($count > 4){
-                                        $statusPremium = 'onclick="alertPremium()"';
+                                        $statusPremium = 'onclick="alertPremium(\'mdl_premFolder\')"';
                                     }
                                 }
 
@@ -81,18 +81,20 @@
                     <div class="menu-sub menu-sub-accordion">	
                         <div class="menu-item">
                             <?php
+                                $count = 0;
                                 foreach ($tags as $item) {
                                     echo '
                                         <a class="menu-link" href="'.site_url('tags/'.$item->ID_TAG).'">
                                             <span class="menu-title"><span class="badge '.$item->BADGE_MC.'"><i class="bi bi-tag-fill text-'.$item->COLOR_MC.'"></i>&nbsp;'.$item->NAMA_TAG.'</span></span>
                                         </a>
                                     ';
+                                    $count++;
                                 }
 
                                 $statusPremium = 'data-bs-toggle="modal" data-bs-target="#mdl_newTag"';
                                 if($this->session->userdata('is_premium') == '0'){
                                     if($count > 4){
-                                        $statusPremium = 'onclick="alertPremium()"';
+                                        $statusPremium = 'onclick="alertPremium(\'mdl_premTags\')"';
                                     }
                                 }
 

@@ -34,9 +34,34 @@
                 $('#'+modal).modal('show');
             }
             $('.inptReminder').change(function(){
-                let value = $(this).val();
-                // JSON.parse(value)
-                console.log(value)
+                let value = $(this).val()
+                const name = $(this).data('name')
+                if(value){
+                    value = JSON.parse(value);
+                    let premium = "<?= $this->session->userdata('is_premium')?>"
+                    if(premium == "0" && value.length >= 2){
+                        value.pop()
+                        reminders = []
+
+                        if(name == "kt_tagify_1"){
+                            reminderAdd.removeAllTags()
+                            for(const i of value){
+                                reminders.push(i['name'])
+                            }
+                            reminderAdd.addTags(value)
+                        }else{
+                            reminderEdit.removeAllTags()
+                            for(const i of value){
+                                reminders.push(i['name'])
+                            }
+                            reminderEdit.addTags(value)
+                        }
+
+
+                        $('#kt_modal_new_target').modal('hide')
+                        $('#mdl_premMultipleReminder').modal('show')
+                    }
+                }
             })
         </script>
 	</body>

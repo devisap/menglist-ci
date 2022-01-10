@@ -95,7 +95,7 @@
                             <!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target priorty"></i> -->
                         </label>
                         <!--end::Label-->
-                        <input id="kt_tagify_1" class="form-control form-control-solid inptReminder" value="" name="PENGINGAT_TASK" />
+                        <input id="kt_tagify_1" data-name="kt_tagify_1" class="form-control form-control-solid inptReminder" value="" name="PENGINGAT_TASK" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
@@ -242,7 +242,7 @@
                             <!-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target priorty"></i> -->
                         </label>
                         <!--end::Label-->
-                        <input id="kt_tagify_3" class="form-control form-control-solid inptReminder" value="" name="PENGINGAT_TASK" />
+                        <input id="kt_tagify_3" data-name="kt_tagify_3" class="form-control form-control-solid inptReminder" value="" name="PENGINGAT_TASK" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
@@ -336,27 +336,6 @@
                         </label>
                         <!--end::Label-->
                         <input type="text" class="form-control form-control-solid" placeholder="Enter Title" name="NAMA_FOLDER" required />
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--end::Label-->
-                        <div class="col-md-6 fv-row">
-                            <label class="fs-6 fw-bold mb-2">Choose a color</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Priority" name="WARNA_TAG">
-                                <option value="1">Default</option>
-                                <option value="2">Blue</option>
-                                <!-- <option value="3">Gray</option> -->
-                                <option value="4">Green</option>
-                                <option value="5">Magenta</option>
-                                <option value="6">Yellow</option>
-                                <option value="7">Red</option>
-                                <option value="8">Dark</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-
-                        </div>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
@@ -701,10 +680,10 @@
         }
         ?>
     ]
-    let tagEdit, reminderEdit;
+    let tagEdit, reminderEdit, reminderAdd;
     $(document).ready(function() {
         var tags1 = document.querySelector("#kt_tagify_1");
-        new Tagify(tags1, {
+        reminderAdd = new Tagify(tags1, {
             whitelist: [{
                     value: "5 minutes ahead",
                     reminder: "-5 minute"
