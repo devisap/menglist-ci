@@ -16,7 +16,11 @@ class StatisticController extends CI_Controller{
         $data['countTask']      = $this->Statistic->getCountTask($email)->JML;
         $data['countCompleted'] = $this->Statistic->getCountCompleted($email)->JML;
         $data['countFolder']    = $this->Statistic->getCountFOlder($email)->JML;
-        $data['completionRate'] = ($data['countTask'] / $data['countCompleted']) * 100;
+        if($data['countTask'] != 0 && $data['countCompleted'] != 0){
+            $data['completionRate'] = ($data['countTask'] / $data['countCompleted']) * 100;
+        }else{
+            $data['completionRate'] = 0;
+        }
 
         $this->template->user('usr/VStatistic', $data);
     }

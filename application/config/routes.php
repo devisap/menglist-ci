@@ -79,6 +79,7 @@ $route['folder/ajxGet']       = 'usr/FolderController/ajxGet';
 
 // TAG
 $route['tags/store']                = 'usr/TagController/store';
+$route['tags/update']               = 'usr/TagController/update';
 $route['tags/(:any)']               = 'usr/TagController/vTag/$1';
 $route['tags/getDataTask/(:any)']   = 'usr/TagController/getDataTask/$1';
 

@@ -19,6 +19,8 @@ class PremiumController extends CI_Controller{
         $dataStore['BUKTI_TRANSACTION'] = $upload['link'];
         $this->Transaction->insert($dataStore);
         redirect('task');
+      }else{
+        print_r($upload['msg']);
       }
     }
 
