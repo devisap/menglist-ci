@@ -19,8 +19,11 @@ class TagController extends CI_Controller{
         $this->template->user('usr/VTags', $data);
     }
     public function store(){
+        // print_r($_POST);
         $this->Tag->insert($_POST);
-        redirect('tags/23');
+        $email = $this->session->userdata('email');
+        $tags = $this->Tag->get(['EMAIL_USER' => $email, 'orderBy' => 'ID_TAG DESC']);
+        redirect('tags/'.$tags[0]->ID_TAG);
     }
     public function getDataTask($idTag){
         $currDate = date('Y-m-d');
