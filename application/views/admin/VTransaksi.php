@@ -163,7 +163,8 @@
 														</div>
 														<div class="modal-footer">
 															<button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-															<a href="<?= base_url('admin/transaction/' . $data->ID_TRANSACTION) ?>" type="button" class="btn btn-primary">Upgrade to Premium</a>
+															<a href="<?= base_url('admin/transaction/' . $data->ID_TRANSACTION."/1") ?>" type="button" class="btn btn-primary">Upgrade</a>
+															<a href="<?= base_url('admin/transaction/' . $data->ID_TRANSACTION."/2") ?>" type="button" class="btn btn-danger">Cancel</a>
 														</div>
 													</div>
 												</div>
@@ -213,7 +214,8 @@
 														</div>
 														<div class="modal-footer">
 															<button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-															<a href="<?= base_url('admin/transaction/' . $data->ID_TRANSACTION) ?>" type="button" class="btn btn-primary">Upgrade to Premium</a>
+															<a href="<?= base_url('admin/transaction/' . $data->ID_TRANSACTION."/1") ?>" type="button" class="btn btn-primary">Upgrade</a>
+															<a href="<?= base_url('admin/transaction/' . $data->ID_TRANSACTION."/2") ?>" type="button" class="btn btn-danger">Cancel</a>
 														</div>
 													</div>
 												</div>

@@ -21,21 +21,19 @@ class TransactionController extends CI_Controller
         $this->template->admin('admin/VTransaksi', $data);
     }
 
-    public function aksiUpgradePremium($Id_Transaction)
+    public function aksiUpgradePremium($Id_Transaction, $status)
     {
-        //verif
-        $this->Transaction->upgradePremium($Id_Transaction);
-        
-        // $status_transaction = $this->Transaction->getById($Id_Transaction);
-        // if ($status_transaction == 1) {
-        //     $this->User->upgradePremiumUser($Id_Transaction);            
-        // }
+        $this->Transaction->update(['ID_TRANSACTION' => $Id_Transaction, 'STATUS_TRANSACTION' => $status]);
 
-        $email['to']        = 'deblenk.dh@gmail.com';
-        $email['subject']   = 'Upgrade Premium';
-        $email['message']   = $this->templateUpgrade();
+        if($status == "1"){
+            $tran = $this->Transaction->getById($Id_Transaction);
+            $this->User->update(['EMAIL_USER' => $tran->EMAIL_USER, 'ISPREMIUM_USER' => '1']);
 
-        $this->emailing->send($email);
+            $email['to']        = $tran->EMAIL_USER;
+            $email['subject']   = 'Upgrade Premium';
+            $email['message']   = $this->templateUpgrade();
+            $this->emailing->send($email);
+        }
         redirect('admin/transaction');
     }
     public function templateUpgrade()
