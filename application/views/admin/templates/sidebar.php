@@ -4,7 +4,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto px-9 mb-9" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="<?php echo site_url('user'); ?>">
+        <a href="<?php echo site_url('admin/user'); ?>">
             <img alt="Logo" src="<?= base_url()?>assets/media/logos/logo.png" class="h-30px logo" />
         </a>
         <!--end::Logo-->
@@ -17,7 +17,7 @@
             <!--begin::Menu-->
             <div class="menu menu-column menu-rounded fw-bold my-auto" id="#kt_aside_menu" data-kt-menu="true">
                 <div class="menu-item">
-                    <a class="menu-link" href="<?php echo site_url('user'); ?>">
+                    <a class="menu-link" href="<?php echo site_url('admin/user'); ?>">
                         <span class="menu-icon">
                             <img alt="Logo" src="<?= base_url()?>assets/media/icons/user.png" class="h-20px logo" />
                         </span>
