@@ -86,8 +86,8 @@ $route['calendar']  = 'usr/CalendarController';
 $route['statistic'] = 'usr/StatisticController';
 
 //SIDE ADMIN
-$route['user']  = 'admin/UserController/vDaftarUser';
-$route['admin/transaction']  = 'admin/TransactionController/';
+$route['admin/user']  = 'admin/UserController/vDaftarUser';
+$route['admin/transaction']  = 'admin/TransactionController';
 
 // ======= CRONJOB =======
 $route['cronjob/reminder-task'] = 'CronjobController/reminderTask';

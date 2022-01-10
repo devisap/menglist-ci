@@ -1,4 +1,4 @@
-<body id="kt_body" class="sidebar-enabled">
+<body id="kt_body" class="">
 	<!--begin::Main-->
 	<!--begin::Root-->
 	<div class="d-flex flex-column flex-root">
@@ -74,7 +74,7 @@
 							<!--begin::Card body-->
 							<div class="card-body pt-0">
 								<!--begin::Table-->
-								<table class="table align-middle table-row-dashed fs-6 gy-5" id="datatable">
+								<table class="table align-middle table-row-dashed fs-6 gy-5" id="datatableUser">
 									<!--begin::Table head-->
 									<thead>
 										<!--begin::Table row-->
@@ -90,10 +90,10 @@
 									<tbody class="fw-bold text-gray-600">
 										<?php
 										foreach ($user as $data) {
-											if ($data->ISPREMIUM_USER == 1) {
-												$status = '<span class="badge badge-pill badge-success">Premium</span>';
-											} else {
+											if ($data->ISPREMIUM_USER == 0) {
 												$status = '<span class="badge badge-pill badge-danger">Belum Premium';
+											} else {
+												$status = '<span class="badge badge-pill badge-success">Premium</span>';
 											}
 
 										?>

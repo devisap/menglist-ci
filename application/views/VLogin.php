@@ -41,8 +41,8 @@
 							<h1 class="fw-bolder fs-2qx pb-5 pb-md-10" style="color: #ffffff;">Welcome to MengList</h1>
 							<!--end::Title-->
 							<!--begin::Description-->
-							<p class="fw-bold fs-2" style="color: #ffffff;">Discover Amazing Task
-							<br />with great management tools</p>
+							<p class="fw-bold fs-2" style="color: #ffffff;">Manage Your Task
+							<br />Manage Your Life</p>
 							<!--end::Description-->
 						</div>
 						<!--end::Content-->

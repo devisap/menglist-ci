@@ -12,21 +12,18 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="MengList" />
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="https://menglist.bgskr-project.my.id/assets/media/logos/favicon.ico" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> -->
     <!--end::Fonts-->
-    <!--begin::Page Vendor Stylesheets(used by this page)-->
-    <link href="<?= base_url() ?>assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
-    <!--end::Page Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
-    <link href="<?= base_url() ?>assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url() ?>assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="https://menglist.bgskr-project.my.id/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="https://menglist.bgskr-project.my.id/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
     <!--begin::Global Javascript Bundle(used by all pages)-->
-    <script src="<?= base_url() ?>assets/plugins/global/plugins.bundle.js"></script>
-    <script src="<?= base_url() ?>assets/js/scripts.bundle.js"></script>
+    <script src="https://menglist.bgskr-project.my.id/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="https://menglist.bgskr-project.my.id/assets/js/scripts.bundle.js"></script>
 </head>
 
 <body id="kt_body" class="bg-body">
@@ -37,9 +34,9 @@
             <!--begin::Content-->
             <div class="d-flex flex-column flex-column-fluid text-center p-10 py-lg-15">
                 <!--begin::Logo-->
-                <a href="<?php echo site_url('task'); ?>" class="mb-10 pt-lg-10">
-                    <img alt="Logo" src="<?= site_url() ?>assets/media/logos/favicon.ico" class="h-40px mb-5" />
-                    <img alt="Logo" src="<?= site_url() ?>assets/media/logos/logo.png" class="h-40px mb-5" />
+                <a href="https://menglist.bgskr-project.my.id/task" class="mb-10 pt-lg-10">
+                    <img alt="Logo" src="https://menglist.bgskr-project.my.id/assets/media/logos/favicon.ico" class="h-40px mb-5" />
+                    <img alt="Logo" src="https://menglist.bgskr-project.my.id/assets/media/logos/logo.png" class="h-40px mb-5" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Wrapper-->
@@ -78,7 +75,7 @@
                     </div>
                     <!--begin::Action-->
                     <div class="text-center mb-10">
-                        <a href="<?php echo site_url('task'); ?>" class="btn btn-lg btn-primary fw-bolder">Skip for now</a>
+                        <a href="https://menglist.bgskr-project.my.id/task" class="btn btn-lg btn-primary fw-bolder">Skip for now</a>
                     </div>
                     <!--end::Action-->
                 </div>
@@ -105,12 +102,12 @@
     </div>
     <!--end::Main-->
     <script>
-        var hostUrl = "<?= base_url() ?>assets/";
+        var hostUrl = "https://menglist.bgskr-project.my.id/assets/";
     </script>
     <!--begin::Javascript-->
     <!--begin::Global Javascript Bundle(used by all pages)-->
-    <script src="<?= base_url() ?>assets/plugins/global/plugins.bundle.js"></script>
-    <script src="<?= base_url() ?>assets/js/scripts.bundle.js"></script>
+    <script src="https://menglist.bgskr-project.my.id/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="https://menglist.bgskr-project.my.id/assets/js/scripts.bundle.js"></script>
     <!--end::Global Javascript Bundle-->
     <!--end::Javascript-->
 </body>
