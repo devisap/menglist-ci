@@ -14,7 +14,8 @@
 <!-- datatable custom -->
 <script>
     table = $("#datatableUser").DataTable({
-        responsive: true
+        responsive: true,
+        scrollX: true
     });
 
     $('#InputSearchUser').keyup(function() {
@@ -23,7 +24,8 @@
 </script>
 <script>
     table = $("#datatableTransaction").DataTable({
-        responsive: true
+        responsive: true,
+        scrollX: true
     });
     $('#InputSearchTransaction').keyup(function() {
         table.search($(this).val()).draw();
