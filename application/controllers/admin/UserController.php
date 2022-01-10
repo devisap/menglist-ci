@@ -8,7 +8,7 @@ class UserController extends CI_Controller{
     public function vDaftarUser(){
         $dataUser = $this->User->getAll();
 
-        $data['title']      = "Daftar User";
+        $data['title']      = "List User";
         $data['user']      = $dataUser;
 
 		$this->template->admin('admin/VUser', $data);
