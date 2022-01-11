@@ -240,22 +240,22 @@
 					<div data-tns="true" data-tns-loop="true" data-tns-swipe-angle="false" data-tns-speed="2000" data-tns-autoplay="true" data-tns-autoplay-timeout="18000" data-tns-controls="true" data-tns-nav="false" data-tns-items="1" data-tns-center="false" data-tns-dots="false" data-tns-prev-button="#kt_team_slider_prev1" data-tns-next-button="#kt_team_slider_next1">
 						<!--begin::Item-->
 						<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-							<img src="assets/media/portfolio/demo1.png" class="card-rounded shadow mw-100" alt="" />
+							<img src="<?= base_url()?>assets/media/portfolio/demo1.PNG" class="card-rounded shadow mw-100" alt="" />
 						</div>
 						<!--end::Item-->
 						<!--begin::Item-->
 						<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-							<img src="assets/media/portfolio/demo2.png" class="card-rounded shadow mw-100" alt="" />
+							<img src="<?= base_url()?>assets/media/portfolio/demo2.PNG" class="card-rounded shadow mw-100" alt="" />
 						</div>
 						<!--end::Item-->
 						<!--begin::Item-->
 						<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-							<img src="assets/media/portfolio/demo3.png" class="card-rounded shadow mw-100" alt="" />
+							<img src="<?= base_url()?>assets/media/portfolio/demo3.PNG" class="card-rounded shadow mw-100" alt="" />
 						</div>
 						<!--end::Item-->
 						<!--begin::Item-->
 						<div class="text-center px-5 pt-5 pt-lg-10 px-lg-10">
-							<img src="assets/media/portfolio/demo4.png" class="card-rounded shadow mw-100" alt="" />
+							<img src="<?= base_url()?>assets/media/portfolio/demo4.PNG" class="card-rounded shadow mw-100" alt="" />
 						</div>
 						<!--end::Item-->
 					</div>

@@ -485,7 +485,7 @@
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
-                    <div class="text-center mt-8">
+                    <div class="text-center mt-8 mb-8">
                         <button type="reset" id="" class="btn btn-secondary me-3" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
@@ -543,7 +543,7 @@
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
-                    <div class="text-center mt-8">
+                    <div class="text-center mt-5 mb-8">
                         <button type="reset" id="" class="btn btn-light me-3">Cancel</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
@@ -601,7 +601,7 @@
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
-                    <div class="text-center mt-8">
+                    <div class="text-center mt-8 mb-8">
                         <button type="reset" id="" class="btn btn-light me-3">Cancel</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
@@ -685,7 +685,7 @@
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
-                    <div class="text-center mt-8">
+                    <div class="text-center mt-8 mb-8">
                         <button type="reset" id="" class="btn btn-secondary me-3" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
@@ -720,7 +720,7 @@
                 <!--end::Heading-->
                 <!--begin::Input group-->
                 <div class="d-flex flex-column mb-8 fv-row">
-                    <img src="<?= base_url() ?>assets/media/portfolio/calendar.png" alt="Premium">
+                    <img src="<?= base_url() ?>assets/media/portfolio/calendar.PNG" alt="Premium">
                 </div>
                 <!--end::Input group-->
                 <!--begin::Actions-->
@@ -758,7 +758,7 @@
                 <!--end::Heading-->
                 <!--begin::Input group-->
                 <div class="d-flex flex-column mb-8 fv-row">
-                    <img src="<?= base_url() ?>assets/media/portfolio/statistic.png" alt="Premium">
+                    <img src="<?= base_url() ?>assets/media/portfolio/statistic.PNG" alt="Premium">
                 </div>
                 <!--end::Input group-->
                 <!--begin::Actions-->
@@ -796,7 +796,7 @@
                 <!--end::Heading-->
                 <!--begin::Input group-->
                 <div class="d-flex flex-column mb-8 fv-row">
-                    <img src="<?= base_url() ?>assets/media/portfolio/task.png" alt="Premium">
+                    <img src="<?= base_url() ?>assets/media/portfolio/task.PNG" alt="Premium">
                 </div>
                 <!--end::Input group-->
                 <!--begin::Actions-->
@@ -834,7 +834,7 @@
                 <!--end::Heading-->
                 <!--begin::Input group-->
                 <div class="d-flex flex-column mb-8 fv-row">
-                    <img src="<?= base_url() ?>assets/media/portfolio/tags.png" alt="Premium">
+                    <img src="<?= base_url() ?>assets/media/portfolio/tags.PNG" alt="Premium">
                 </div>
                 <!--end::Input group-->
                 <!--begin::Actions-->
@@ -872,7 +872,7 @@
                 <!--end::Heading-->
                 <!--begin::Input group-->
                 <div class="d-flex flex-column mb-8 fv-row">
-                    <img src="<?= base_url() ?>assets/media/portfolio/folder.png" alt="Premium">
+                    <img src="<?= base_url() ?>assets/media/portfolio/folder.PNG" alt="Premium">
                 </div>
                 <!--end::Input group-->
                 <!--begin::Actions-->
@@ -910,7 +910,7 @@
                 <!--end::Heading-->
                 <!--begin::Input group-->
                 <div class="d-flex flex-column mb-8 fv-row">
-                    <img src="<?= base_url() ?>assets/media/portfolio/task.png" alt="Premium">
+                    <img src="<?= base_url() ?>assets/media/portfolio/task.PNG" alt="Premium">
                 </div>
                 <!--end::Input group-->
                 <!--begin::Actions-->
