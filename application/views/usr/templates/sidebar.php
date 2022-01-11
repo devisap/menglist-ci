@@ -7,7 +7,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto px-9 mb-9" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="VTask.html">
+        <a href="<?php echo site_url('task'); ?>">
             <img alt="Logo" src="<?= base_url()?>assets/media/logos/logo.png" class="h-30px logo" />
         </a>
         <!--end::Logo-->
@@ -217,7 +217,7 @@
                     <!--end::Menu separator-->
                     <!--begin::Menu item-->
                     <div class="menu-item px-5 my-1">
-                        <a href="<?= site_url('premium')?>" class="menu-link px-5">Account Settings</a>
+                        <a href="<?= site_url('premium')?>" class="menu-link px-5">Account</a>
                     </div>
                     <!--end::Menu item-->
                     <!--begin::Menu item-->

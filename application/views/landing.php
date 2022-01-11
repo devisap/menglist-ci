@@ -117,7 +117,7 @@
 						</h1>
 						<!--end::Title-->
 						<!--begin::Action-->
-						<a href="../../demo3/dist/index.html" class="btn btn-primary">Try it Free !</a>
+						<a href="<?php echo site_url('sign-up'); ?>" class="btn btn-primary">Try it Free !</a>
 						<!--end::Action-->
 					</div>
 					<!--end::Heading-->
@@ -429,7 +429,7 @@
 											</div>
 											<!--end::Features-->
 											<!--begin::Select-->
-											<a href="<?php echo site_url('premium'); ?>" class="btn btn-primary">Select</a>
+											<a href="<?php echo site_url('sign-up'); ?>" class="btn btn-primary">Select</a>
 											<!--end::Select-->
 										</div>
 										<!--end::Option-->
@@ -620,7 +620,7 @@
 								<!--end::Title-->
 								<!--begin::Text-->
 								<span class="fw-normal fs-4 text-gray-700">Email us to
-									<a href="<?php echo site_url('welcome'); ?>" class="text-white opacity-50 text-hover-primary">menglist@gmail.com</a></span>
+									<a href="mailto:menglist.company@gmail.com" class="text-white opacity-50 text-hover-primary">menglist.company@gmail.com</a></span>
 								<!--end::Text-->
 							</div>
 							<!--end::Block-->
@@ -710,22 +710,22 @@
 						<!--begin::Copyright-->
 						<div class="d-flex align-items-center order-2 order-md-1">
 							<!--begin::Logo-->
-							<a href="<?php echo site_url('welcome'); ?>">
+							<a href="<?php echo site_url(''); ?>">
 								<img alt="Logo" src="assets/media/logos/favicon.ico" class="h-15px h-md-20px" />
 							</a>
 							<!--end::Logo image-->
 							<!--begin::Logo image-->
-							<span class="mx-5 fs-6 fw-bold text-gray-600 pt-1" href="<?php echo site_url('welcome'); ?>">© 2022 Menglist</span>
+							<span class="mx-5 fs-6 fw-bold text-gray-600 pt-1" href="<?php echo site_url(''); ?>">© 2022 Menglist</span>
 							<!--end::Logo image-->
 						</div>
 						<!--end::Copyright-->
 						<!--begin::Menu-->
 						<ul class="menu menu-gray-600 menu-hover-primary fw-bold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
 							<li class="menu-item">
-								<a href="<?php echo site_url('welcome'); ?>" target="_blank" class="menu-link px-2">About</a>
+								<a href="<?php echo site_url(''); ?>" target="_blank" class="menu-link px-2">About</a>
 							</li>
 							<li class="menu-item mx-5">
-								<a href="<?php echo site_url('welcome'); ?>" target="_blank" class="menu-link px-2">Support</a>
+								<a href="<?php echo site_url(''); ?>" target="_blank" class="menu-link px-2">Support</a>
 							</li>
 							<li class="menu-item">
 								<a href="" target="_blank" class="menu-link px-2">Purchase</a>
@@ -755,20 +755,20 @@
 	</div>
 	<!--end::Main-->
 	<script>
-		var hostUrl = "assets/";
+		var hostUrl = "<?= base_url() ?>assets/";
 	</script>
 	<!--begin::Javascript-->
 	<!--begin::Global Javascript Bundle(used by all pages)-->
-	<script src="assets/plugins/global/plugins.bundle.js"></script>
-	<script src="assets/js/scripts.bundle.js"></script>
+	<script src="<?= base_url() ?>assets/plugins/global/plugins.bundle.js"></script>
+	<script src="<?= base_url() ?>assets/js/scripts.bundle.js"></script>
 	<!--end::Global Javascript Bundle-->
 	<!--begin::Page Vendors Javascript(used by this page)-->
-	<script src="assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
-	<script src="assets/plugins/custom/typedjs/typedjs.bundle.js"></script>
+	<script src="<?= base_url() ?>assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
+	<script src="<?= base_url() ?>assets/plugins/custom/typedjs/typedjs.bundle.js"></script>
 	<!--end::Page Vendors Javascript-->
 	<!--begin::Page Custom Javascript(used by this page)-->
-	<script src="assets/js/custom/landing.js"></script>
-	<script src="assets/js/custom/pages/company/pricing.js"></script>
+	<script src="<?= base_url() ?>assets/js/custom/landing.js"></script>
+	<script src="<?= base_url() ?>assets/js/custom/pages/company/pricing.js"></script>
 	<!--end::Page Custom Javascript-->
 	<!--end::Javascript-->
 </body>

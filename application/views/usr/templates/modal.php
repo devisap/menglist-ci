@@ -340,7 +340,7 @@
                     <!--end::Input group-->
                     <!--begin::Actions-->
                     <div class="text-center mt-8">
-                        <button type="reset" id="" class="btn btn-light me-3">Cancel</button>
+                        <button type="reset" id="" class="btn btn-secondary me-3" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
@@ -486,7 +486,7 @@
                     <!--end::Input group-->
                     <!--begin::Actions-->
                     <div class="text-center mt-8">
-                        <button type="reset" id="" class="btn btn-light me-3">Cancel</button>
+                        <button type="reset" id="" class="btn btn-secondary me-3" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
@@ -686,7 +686,7 @@
                     <!--end::Input group-->
                     <!--begin::Actions-->
                     <div class="text-center mt-8">
-                        <button type="reset" id="" class="btn btn-light me-3">Cancel</button>
+                        <button type="reset" id="" class="btn btn-secondary me-3" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
@@ -727,11 +727,11 @@
                 <div class="text-center mt-10">
                     <h2 class="text-center">Calendar View</h2>
                     <label class="text-center fw-bold mb-4">Upgrade to Premium, view your monthly tasks in the calendar and to display your weekly plans with a timeline, it's always good to keep everything under control at a glance</label>
-                    <button type="submit" id="" class="btn btn-primary">
+                    <a href="<?php echo site_url('premium'); ?>" type="button" id="" class="btn btn-primary">
                         <span class="indicator-label">Upgrade Now</span>
                         <span class="indicator-progress">Please wait...
                             <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                    </button>
+                    </a>
                 </div>
                 <!--end::Actions-->
                 <!--end:Form-->
@@ -765,11 +765,11 @@
                 <div class="text-center mt-10">
                     <h2 class="text-center">Statistic View</h2>
                     <label class="text-center fw-bold mb-4">To see your statistics, please upgrade to create unlimited text. Please upgrade premium by pressing the upgrade button below.</label>
-                    <button type="submit" id="" class="btn btn-primary">
+                    <a href="<?php echo site_url('premium'); ?>" type="button" id="" class="btn btn-primary">
                         <span class="indicator-label">Upgrade Now</span>
                         <span class="indicator-progress">Please wait...
                             <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                    </button>
+                    </a>
                 </div>
                 <!--end::Actions-->
                 <!--end:Form-->
