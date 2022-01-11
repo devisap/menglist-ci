@@ -73,6 +73,8 @@ $route['task/ajxGet']       = 'usr/TaskController/ajxGet';
 
 // FOLDER
 $route['folder/store']              = 'usr/FolderController/store';
+$route['folder/update']             = 'usr/FolderController/update';
+$route['folder/destroy']            = 'usr/FolderController/destroy';
 $route['folder/(:any)']             = 'usr/FolderController/vFolder/$1';
 $route['folder/getDataTask/(:any)'] = 'usr/FolderController/getDataTask/$1';
 $route['folder/ajxGet']       = 'usr/FolderController/ajxGet';

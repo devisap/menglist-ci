@@ -385,7 +385,7 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('folder/edit') ?>" method="post">
+                <form id="mdl_editFolder" class="form" action="<?= site_url('folder/update') ?>" method="post">
                     <!--begin::Heading-->
                     <div class="mb-13"></div>
                     <!--end::Heading-->
@@ -397,25 +397,21 @@
                             <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i>
                         </label>
                         <!--end::Label-->
-                        <input type="text" id="mdlEdit_title" class="form-control form-control-solid" placeholder="Enter Title" name="NAMA_TASK" required />
+                        <input type="text" id="mdl_editFolder_nama" class="form-control form-control-solid" placeholder="Enter Title" name="NAMA_FOLDER" required />
+                        <input type="hidden" id="mdl_editFolder_id" class="form-control form-control-solid" placeholder="Enter Title" name="ID_FOLDER" required />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
                     <div class="text-center">
                         <button type="reset" id="" class="btn btn-secondary me-3" data-bs-dismiss="modal">Cancel</button>
-                        <button type="reset" onclick="deleteTask()" id="" class="btn btn-danger me-3">Delete</button>
                         <button type="submit" id="" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
                         <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email') ?>">
-                        <input type="hidden" id="mdlEdit_id" name="ID_TASK">
                     </div>
                     <!--end::Actions-->
-                </form>
-                <form id="frmDelete" action="<?= site_url('task/destroy') ?>" method="post">
-                    <input type="hidden" name="ID_TASK" id="mdlDelete_id">
                 </form>
                 <!--end:Form-->
             </div>
@@ -517,7 +513,7 @@
         <div class="modal-content rounded">
             <!--begin::Modal header-->
             <div class="modal-header pb-0 border-0 justify-content-between">
-                <h5 class="modal-title text-left fs-1">Destroy Tag <i class="bi bi-tag-fill fs-2x"></i></h5>
+                <h5 class="modal-title text-left fs-1">Delete Tag <i class="bi bi-tag-fill fs-2x"></i></h5>
                 <!--begin::Close-->
                 <div class="btn btn-sm btn-icon btn-active-color-primary " data-bs-dismiss="modal">
                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
@@ -543,6 +539,64 @@
                     <div class="d-flex flex-column mb-8 fv-row" style="text-align: center;">
                         <h3>Are you sure to remove the tag ?</h3>
                         <input type="hidden" class="form-control form-control-solid" id="mdl_deleteTag_id" name="ID_TAG" required />
+                    </div>
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="text-center mt-8">
+                        <button type="reset" id="" class="btn btn-light me-3">Cancel</button>
+                        <button type="submit" id="" class="btn btn-primary">
+                            <span class="indicator-label">Submit</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                        <input type="hidden" name="EMAIL_USER" value="<?= $this->session->userdata('email') ?>">
+                    </div>
+                    <!--end::Actions-->
+                </form>
+                <!--end:Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - New Target-->
+<!--begin::Modal - New Target-->
+<div class="modal fade" id="mdl_deleteFolder" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal header-->
+            <div class="modal-header pb-0 border-0 justify-content-between">
+                <h5 class="modal-title text-left fs-1">Delete Folder <i class="bi bi-tag-fill fs-2x"></i></h5>
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary " data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--begin::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+                <form id="kt_modal_new_target_form" class="form" action="<?= site_url('folder/destroy') ?>" method="post">
+                    <!--begin::Heading-->
+                    <div class="mb-13"></div>
+                    <!--end::Heading-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row" style="text-align: center;">
+                        <h3>Are you sure to remove the folder ?</h3>
+                        <input type="hidden" class="form-control form-control-solid" id="mdl_deleteFolder_id" name="ID_FOLDER" required />
                     </div>
                     </div>
                     <!--end::Input group-->

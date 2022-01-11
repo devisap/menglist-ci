@@ -45,6 +45,9 @@ class Task extends CI_Model{
     public function delete($param){
         $this->db->delete('task', $param);
     }
+    public function deleteFolder($param){
+        $this->db->where('ID_FOLDER', $param['ID_FOLDER'])->update('task', ['ID_FOLDER' => NULL]);
+    }
     public function deleteTag($param){
         $this->db->delete('task_tag', $param);
     }
