@@ -13,6 +13,7 @@ class FolderController extends CI_Controller{
         $data['title']      = 'Folder';
         $data['folders']    = $this->General->get('folder', ['EMAIL_USER' => $this->session->userdata('email')]);
         $data['tags']       = $this->General->get('tag', ['EMAIL_USER' => $this->session->userdata('email')]);
+        $data['folder']     = $this->Folder->getById($id);
         $data['idFolder']   = $id;
 
         $this->template->user('usr/VFolder', $data);
@@ -22,6 +23,15 @@ class FolderController extends CI_Controller{
         $email = $this->session->userdata('email');
         $Folder = $this->Folder->get(['EMAIL_USER' => $email, 'orderBy' => 'ID_FOLDER DESC']);
         redirect('folder/'.$Folder[0]->ID_FOLDER);
+    }
+    public function update(){
+        $this->Folder->update($_POST);
+        redirect('folder/'.$_POST['ID_FOLDER']);
+    }
+    public function destroy(){
+        $this->Task->deleteFolder(['ID_FOLDER' => $_POST['ID_FOLDER']]);
+        $this->Folder->delete(['ID_FOLDER' => $_POST['ID_FOLDER']]);
+        redirect('task');
     }
     public function getDataTask($idFolder){
         $currDate       = date('Y-m-d');

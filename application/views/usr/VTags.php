@@ -68,8 +68,8 @@
 							<!--begin::Topbar-->
 							<div class="d-flex align-items-center flex-shrink-0">
 								<!--begin::Action-->
-									<button type="button" href="#" class="btn btn-primary er fs-6 px-6 py-2" id="btn_editTag" data-nama="<?= $tag->NAMA_TAG?>" data-color="<?= $tag->WARNA_TAG?>">Edit</button>&nbsp;
-									<a href="#" class="btn btn-danger er fs-6 px-6 py-2" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">Delete</a>
+									<button type="button" href="#" class="btn btn-primary er fs-6 px-6 py-2" id="btn_editTag" data-nama="<?= $tag->NAMA_TAG?>" data-id="<?= $tag->ID_TAG?>" data-color="<?= $tag->WARNA_TAG?>">Edit</button>&nbsp;
+									<button href="button" data-id="<?= $tag->ID_TAG?>" class="btn btn-danger er fs-6 px-6 py-2" id="btn_deleteTag" >Delete</button>
 									<!--end::Action-->
 						</div>
 						<!--end::Topbar-->
@@ -224,10 +224,18 @@
 			$('#btn_editTag').click(function(){
 				const nama = $(this).data('nama')
 				const color = $(this).data('color')
+				const id = $(this).data('id')
 
 				$('#mdl_editTag_nama').val(nama)
-				$('#mdl_editTag_color').val(color)
+				$('#mdl_editTag_color').val(color).change()
+				$('#mdl_editTag_id').val(id)
 				$('#mdl_editTag').modal('show')
+			})
+			$('#btn_deleteTag').click(function(){
+				const id = $(this).data('id')
+
+				$('#mdl_deleteTag_id').val(id)
+				$('#mdl_deleteTag').modal('show')
 			})
 		</script>
 		

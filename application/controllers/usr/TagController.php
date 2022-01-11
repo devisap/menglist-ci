@@ -25,6 +25,15 @@ class TagController extends CI_Controller{
         $tags = $this->Tag->get(['EMAIL_USER' => $email, 'orderBy' => 'ID_TAG DESC']);
         redirect('tags/'.$tags[0]->ID_TAG);
     }
+    public function update(){
+        $this->Tag->update($_POST);
+        redirect('tags/'.$_POST['ID_TAG']);
+    }
+    public function destroy(){
+        $this->Task->deleteTag(['ID_TAG' => $_POST['ID_TAG']]);
+        $this->Tag->delete(['ID_TAG' => $_POST['ID_TAG']]);
+        redirect('task');
+    }
     public function getDataTask($idTag){
         $currDate = date('Y-m-d');
         echo json_encode([

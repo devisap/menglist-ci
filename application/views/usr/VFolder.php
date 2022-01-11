@@ -13,7 +13,7 @@
 							<!--begin::Page title-->
 							<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
 								<!--begin::Heading-->
-								<h1 class="d-flex flex-column text-dark fw-bolder my-0 fs-1">Folder
+								<h1 class="d-flex flex-column text-dark fw-bolder my-0 fs-1"><?= $folder->NAMA_FOLDER?>
 								<!-- <small class="text-muted fs-6 fw-bold ms-1 pt-1">You’ve got 24 New Sales</small></h1> -->
 								<!--end::Heading-->
 							</div>
@@ -42,8 +42,8 @@
 							<!--begin::Topbar-->
 							<div class="d-flex align-items-center flex-shrink-0">
 								<!--begin::Action-->
-									<a href="#" class="btn btn-primary er fs-6 px-6 py-2" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">Edit</a>&nbsp;
-									<a href="#" class="btn btn-danger er fs-6 px-6 py-2" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">Delete</a>
+									<button id="btn_editFolder" data-nama="<?= $folder->NAMA_FOLDER?>" data-id="<?= $folder->ID_FOLDER?>" class="btn btn-primary er fs-6 px-6 py-2">Edit</button>&nbsp;
+									<button id="btn_deleteFolder" data-nama="<?= $folder->NAMA_FOLDER?>" data-id="<?= $folder->ID_FOLDER?>" class="btn btn-danger er fs-6 px-6 py-2">Delete</button>
 									<!--end::Action-->
 						</div>
 						<!--end::Topbar-->
@@ -115,81 +115,7 @@
 			<!--end::Svg Icon-->
 		</div>
 		<script>
-			let tagsItem = [
-				<?php
-					foreach ($tags as $item) {
-						echo '{value: "'.$item->NAMA_TAG.'", id: "'.$item->ID_TAG.'"},';
-					}	
-				?>
-			]
-			let tagEdit, reminderEdit;
-			
 			$(document).ready(function() {
-				var tags1 = document.querySelector("#kt_tagify_1");
-				new Tagify(tags1, {
-					whitelist: [
-						{value: "5 minutes ahead", reminder: "-5 minute"},
-						{value: "30 minutes ahead", reminder: "-30 minute"},
-						{value: "1 hour ahead", reminder: "-1 hour"},
-						{value: "1 day ahead", reminder: "-1 day"}
-					],
-					maxTags: 10,
-					dropdown: {
-						maxItems: 20, // <- mixumum allowed rendered suggestions
-						classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
-						enabled: 0, // <- show suggestions on focus
-						closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected
-					}
-				});
-
-				var tags2 = document.querySelector('#kt_tagify_2');
-				new Tagify(tags2, {
-					whitelist: tagsItem,
-					maxTags: 10,
-					dropdown: {
-						maxItems: 20, // <- mixumum allowed rendered suggestions
-						classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
-						enabled: 0, // <- show suggestions on focus
-						closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
-					}
-				});
-
-				var tags3 = document.querySelector("#kt_tagify_3");
-					reminderEdit = new Tagify(tags3, {
-					whitelist: [
-						{value: "5 minutes ahead", reminder: "-5 minute"},
-						{value: "30 minutes ahead", reminder: "-30 minute"},
-						{value: "1 hour ahead", reminder: "-1 hour"},
-						{value: "1 day ahead", reminder: "-1 day"}
-					],
-					maxTags: 10,
-					dropdown: {
-						maxItems: 20, // <- mixumum allowed rendered suggestions
-						classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
-						enabled: 0, // <- show suggestions on focus
-						closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected
-					}
-				});
-
-				var tags4 = document.querySelector('#kt_tagify_4');
-					tagEdit = new Tagify(tags4, {
-						whitelist: tagsItem,
-						maxTags: 10,
-						dropdown: {
-							maxItems: 20, // <- mixumum allowed rendered suggestions
-							classname: "tagify__inline__suggestions", // <- custom classname for this dropdown, so it could be targeted
-							enabled: 0, // <- show suggestions on focus
-							closeOnSelect: false // <- do not hide the suggestions dropdown once an item has been selected.
-						}
-					});
-
-				$("#kt_datepicker_3").flatpickr({
-					enableTime: true,
-					dateFormat: "j F Y, H:i",
-					time_24hr: true,
-					// defaultDate: "today"
-				});
-
 				getDataTask();
 			})
 			const getDataTask = () => {
@@ -273,4 +199,18 @@
 			const deleteTask = () => {
 				$('#frmDelete').submit();
 			}
+			$('#btn_editFolder').click(function(){
+				const nama = $(this).data('nama')
+				const id = $(this).data('id')
+
+				$('#mdl_editFolder_nama').val(nama)
+				$('#mdl_editFolder_id').val(id)
+				$('#mdl_editFolder').modal('show')
+			})
+			$('#btn_deleteFolder').click(function(){
+				const id = $(this).data('id')
+
+				$('#mdl_deleteFolder_id').val(id)
+				$('#mdl_deleteFolder').modal('show')
+			})
 		</script>
