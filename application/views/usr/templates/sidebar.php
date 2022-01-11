@@ -217,7 +217,7 @@
                     <!--end::Menu separator-->
                     <!--begin::Menu item-->
                     <div class="menu-item px-5 my-1">
-                        <a href="<?= site_url('premium')?>" class="menu-link px-5">Account Settings</a>
+                        <a href="<?= site_url('premium')?>" class="menu-link px-5">Account</a>
                     </div>
                     <!--end::Menu item-->
                     <!--begin::Menu item-->
