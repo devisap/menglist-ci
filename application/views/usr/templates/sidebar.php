@@ -7,7 +7,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto px-9 mb-9" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="VTask.html">
+        <a href="<?php echo site_url('task'); ?>">
             <img alt="Logo" src="<?= base_url()?>assets/media/logos/logo.png" class="h-30px logo" />
         </a>
         <!--end::Logo-->
